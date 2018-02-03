@@ -1,0 +1,15 @@
+/* made by EzioChiu
+   Image: /System/Library/Frameworks/UIKit.framework/UIKit
+ */
+
+@interface UIAlertVisualStyleUpdatableConstraints : NSObject {
+    NSMutableDictionary * _constraintsByKey;
+}
+
+- (void).cxx_destruct;
+- (void)addConstraint:(id)arg1 forKey:(id)arg2;
+- (id)constraintForKey:(id)arg1;
+- (bool)hasUpdatableConstraints;
+- (id)init;
+
+@end
