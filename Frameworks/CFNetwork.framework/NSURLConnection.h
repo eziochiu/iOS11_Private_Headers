@@ -10,6 +10,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (readonly) NKAssetDownload *newsstandAssetDownload;
 @property (readonly, copy) NSURLRequest *originalRequest;
 @property (readonly) Class superclass;
 
@@ -58,8 +59,16 @@
 - (void)unscheduleFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;
 
+// Image: /System/Library/Frameworks/NewsstandKit.framework/NewsstandKit
+
+- (id)newsstandAssetDownload;
+
 // Image: /System/Library/PrivateFrameworks/PersistentConnection.framework/PersistentConnection
 
 + (id)pcdeprecated_connectionWithRequest:(id)arg1 delegate:(id)arg2 usesCache:(bool)arg3 maxContentLength:(long long)arg4 startImmediately:(bool)arg5 connectionProperties:(id)arg6;
+
+// Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
+
++ (id)safari_sendAsynchronousRequest:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
 
 @end

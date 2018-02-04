@@ -24,14 +24,24 @@
 }
 
 @property (readonly) int auditSessionIdentifier;
+@property (nonatomic, readonly, copy) NSString *cx_applicationIdentifier;
+@property (nonatomic, readonly) NSBundle *cx_bundle;
+@property (nonatomic, readonly, copy) NSSet *cx_capabilities;
+@property (nonatomic, readonly, copy) NSString *cx_developerTeamIdentifier;
+@property (nonatomic, readonly) bool cx_hasVoIPBackgroundMode;
+@property (nonatomic, readonly, copy) NSString *cx_processName;
 @property (readonly) unsigned int effectiveGroupIdentifier;
 @property (readonly) unsigned int effectiveUserIdentifier;
 @property (readonly, retain) NSXPCListenerEndpoint *endpoint;
 @property (retain) NSXPCInterface *exportedInterface;
 @property (retain) id exportedObject;
+@property (nonatomic, readonly) bool hk_isAppExtension;
+@property (nonatomic, readonly, copy) NSString *hk_signingIdentifier;
 @property (copy) id /* block */ interruptionHandler;
 @property (copy) id /* block */ invalidationHandler;
+@property (nonatomic, readonly) NSString *processBundleIdentifier;
 @property (readonly) int processIdentifier;
+@property (nonatomic, readonly) NSString *processName;
 @property (retain) NSXPCInterface *remoteObjectInterface;
 @property (readonly, retain) id remoteObjectProxy;
 @property (readonly, copy) NSString *serviceName;
@@ -122,6 +132,15 @@
 - (id)userInfo;
 - (id)valueForEntitlement:(id)arg1;
 
+// Image: /System/Library/Frameworks/CallKit.framework/CallKit
+
+- (id)cx_applicationIdentifier;
+- (id)cx_bundle;
+- (id)cx_capabilities;
+- (id)cx_developerTeamIdentifier;
+- (bool)cx_hasVoIPBackgroundMode;
+- (id)cx_processName;
+
 // Image: /System/Library/Frameworks/FileProvider.framework/FileProvider
 
 - (id)fp_bundleIdentifier;
@@ -133,8 +152,51 @@
 - (bool)fp_isNonSandboxedConnection;
 - (id)fp_valueForEntitlement:(id)arg1;
 
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
+
+- (bool)hk_isAppExtension;
+- (id)hk_signingIdentifier;
+
+// Image: /System/Library/Frameworks/Social.framework/Social
+
+- (id)_clientBundleID;
+- (bool)sl_clientHasEntitlement:(id)arg1;
+- (id)sl_localizedClientName;
+
+// Image: /System/Library/PrivateFrameworks/CellularPlanManager.framework/CellularPlanManager
+
+- (id)initCellularPlanDatabaseClient;
+- (id)initVinylTestClient;
+
+// Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
+
+- (id)CKValueForEntitlements:(id)arg1 error:(id*)arg2;
+
+// Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
+
+- (id)sgd_clientName;
+
+// Image: /System/Library/PrivateFrameworks/Pegasus.framework/Pegasus
+
+- (id)PG_remoteObjectProxyWithDebugMethodAndPointerProem:(id)arg1;
+- (id)PG_remoteObjectProxyWithDebugMethodAndPointerProem:(id)arg1 errorHandler:(id /* block */)arg2;
+
+// Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
+
++ (id)callServicesClientXPCInterface;
++ (id)callServicesDaemonDelegateXPCInterface;
+
+- (id)processBundleIdentifier;
+- (id)processName;
+
 // Image: /System/Library/PrivateFrameworks/UserManagement.framework/UserManagement
 
 - (bool)hasEntitlement:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/UserNotificationsServer.framework/UserNotificationsServer
+
+- (id)uns_clientBundleProxy;
+- (id)uns_clientRemoteNotificationEnvironment;
+- (bool)uns_isAllowedToRequestUserNotificationsForBundleIdentifier:(id)arg1;
 
 @end

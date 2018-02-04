@@ -25,6 +25,8 @@
 @property (nonatomic) bool scaleImage;
 @property (nonatomic, copy) NSString *title;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (id)HUDItemForBarButtonItem:(id)arg1;
 + (id)HUDItemForTabBarItem:(id)arg1;
 
@@ -49,5 +51,9 @@
 - (void)setScaleImage:(bool)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
+
+// Image: /System/Library/PrivateFrameworks/NotesUI.framework/NotesUI
+
++ (id)HUDItemForBarButtonItem:(id)arg1;
 
 @end

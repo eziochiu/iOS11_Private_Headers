@@ -11,6 +11,8 @@
 @property (nonatomic) bool perservesAlpha;
 @property (nonatomic) bool preservesRange;
 
+// Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
+
 + (id)betterString:(id)arg1;
 + (id)colorMatrixBiasKernel;
 + (id)hashForString:(id)arg1;
@@ -45,5 +47,9 @@
 - (void)setPerservesAlpha:(bool)arg1;
 - (void)setPreservesRange:(bool)arg1;
 - (void)setROISelector:(SEL)arg1;
+
+// Image: /System/Library/PrivateFrameworks/PhotoImaging.framework/PhotoImaging
+
++ (id)kernelsDictionaryWithString:(id)arg1;
 
 @end

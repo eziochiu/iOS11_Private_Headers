@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIImageView : UIView <UIAccessibilityContentSizeCategoryImageAdjusting> {
+@interface UIImageView : UIView <NUCrossFadeViewAnimatable, UIAccessibilityContentSizeCategoryImageAdjusting> {
     bool  __animatesContents;
     bool  _adjustsImageWhenAncestorFocused;
     struct UIEdgeInsets { 
@@ -49,6 +49,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIColor *tintColor;
 @property (getter=isUserInteractionEnabled, nonatomic) bool userInteractionEnabled;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (bool)_canReuseIOSurface:(struct __IOSurface { }*)arg1 forRenderingCIImageWithIOSurfaceProperties:(id)arg2;
 + (id)_surfacePropertiesForRenderingCIImageWithSize:(struct CGSize { double x1; double x2; })arg1 pixelFormat:(unsigned int)arg2 bytesPerElement:(unsigned long long)arg3;
@@ -169,5 +171,37 @@
 - (void)tintColorDidChange;
 - (void)traitCollectionDidChange:(id)arg1;
 - (bool)useBlockyMagnificationInClassic;
+
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
+- (id)pu_extractPlayOverlayBackgroundImageFromCenter:(struct CGPoint { double x1; double x2; })arg1 asynchronously:(bool)arg2 handler:(id /* block */)arg3;
+
+// Image: /System/Library/PrivateFrameworks/AppSupportUI.framework/AppSupportUI
+
+- (bool)supportsAsynchronousMeasurement;
+
+// Image: /System/Library/PrivateFrameworks/MaterialKit.framework/MaterialKit
+
+- (void)mt_applyVibrantStyling:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NanoMediaBridgeUI.framework/NanoMediaBridgeUI
+
+- (id)_imageFromImage:(id)arg1 scaledToSize:(struct CGSize { double x1; double x2; })arg2;
+- (void)setArtworkCatalog:(id)arg1 withPlaceholderImage:(id)arg2 withDesiredSize:(struct CGSize { double x1; double x2; })arg3;
+
+// Image: /System/Library/PrivateFrameworks/NewsUI.framework/NewsUI
+
+- (void)nu_crossFadeViewClearVisibleState;
+- (void)nu_crossFadeViewSetValue:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NotesUI.framework/NotesUI
+
+- (void)ic_enableLetterpressIfSupported;
+
+// Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
+
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })alignmentRect;
+- (struct CGSize { double x1; double x2; })alignmentSize;
+- (void)setAlignmentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 
 @end

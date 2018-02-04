@@ -7,6 +7,8 @@
 }
 
 @property (nonatomic, retain) <NSObject><NSCopying> *AVKitData;
+@property (nonatomic, retain) MPAVItem *MPAVItem;
+@property (nonatomic) MPQueuePlayer *MP_associatedQueuePlayer;
 @property (getter=_isExternalProtectionRequiredForPlayback, setter=_setExternalProtectionRequiredForPlayback:, nonatomic) bool _externalProtectionRequiredForPlayback;
 @property (getter=_isRental, nonatomic, readonly) bool _rental;
 @property (nonatomic, readonly) NSDate *_rentalExpirationDate;
@@ -18,13 +20,21 @@
 @property (getter=isAuthorizationRequiredForPlayback, nonatomic, readonly) bool authorizationRequiredForPlayback;
 @property (getter=isContentAuthorizedForPlayback, nonatomic, readonly) bool contentAuthorizedForPlayback;
 @property (nonatomic, readonly) NSError *error;
+@property (getter=is_isHighFramerate, nonatomic, readonly) bool is_highFramerate;
 @property (nonatomic, readonly) NSArray *mediaDataCollectors;
 @property (nonatomic, copy) NSString *mediaKind;
 @property (nonatomic, readonly) NSArray *outputs;
 @property (nonatomic) bool playHapticTracks;
+@property (nonatomic, readonly) double rc_durationInSeconds;
+@property (nonatomic, readonly) bool rc_isDurationAvailable;
+@property (nonatomic, readonly) struct { double x1; double x2; } rc_playableTimeRange;
+@property (setter=rc_setPreviewTimeRange:, nonatomic) struct { double x1; double x2; } rc_previewTimeRange;
 @property (nonatomic) unsigned long long restrictions;
 @property (nonatomic, copy) NSString *serviceIdentifier;
 @property (nonatomic, readonly) long long status;
+@property (nonatomic, readonly) AVPlayerItemTrack *tl_hapticPlayerItemTrack;
+
+// Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
 
 + (struct OpaqueCMTimebase { }*)_copyTimebaseFromFigPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1;
 + (int)_createFigPlaybackItemForFigPlayer:(struct OpaqueFigPlayer { }*)arg1 asset:(id)arg2 URL:(id)arg3 flags:(unsigned int)arg4 playbackItem:(struct OpaqueFigPlaybackItem {}**)arg5;
@@ -439,5 +449,33 @@
 - (float)volumeAdjustment;
 - (void)willChangeValueForKey:(id)arg1;
 - (bool)willNeverSeekBackwardsHint;
+
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+
+- (id)MPAVItem;
+- (id)MP_associatedQueuePlayer;
+- (id)MP_shortDescription;
+- (id)createLanguageOptions;
+- (void)setMPAVItem:(id)arg1;
+- (void)setMP_associatedQueuePlayer:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/PhotosPlayer.framework/PhotosPlayer
+
+- (void)is_enableColorMatching;
+- (bool)is_isHighFramerate;
+- (bool)is_setEnabled:(bool)arg1 forTracksWithMediaType:(id)arg2 force:(bool)arg3;
+
+// Image: /System/Library/PrivateFrameworks/ToneLibrary.framework/ToneLibrary
+
+- (id)tl_hapticPlayerItemTrack;
+
+// Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
+
+- (double)_rawDurationInSeconds;
+- (double)rc_durationInSeconds;
+- (bool)rc_isDurationAvailable;
+- (struct { double x1; double x2; })rc_playableTimeRange;
+- (struct { double x1; double x2; })rc_previewTimeRange;
+- (void)rc_setPreviewTimeRange:(struct { double x1; double x2; })arg1;
 
 @end

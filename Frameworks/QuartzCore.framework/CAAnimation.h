@@ -8,6 +8,8 @@
 }
 
 @property CAStateControllerTransition *CAStateControllerTransition;
+@property long long _mapkit_ID;
+@property (nonatomic, copy) NSArray *animationEvents;
 @property bool autoreverses;
 @property double beginTime;
 @property (copy) NSString *beginTimeMode;
@@ -15,6 +17,8 @@
 @property bool discretizesTime;
 @property double duration;
 @property (getter=isEnabled) bool enabled;
+@property double fadeInDuration;
+@property double fadeOutDuration;
 @property (copy) NSString *fillMode;
 @property double frameInterval;
 @property long long preferredFramesPerSecond;
@@ -24,6 +28,9 @@
 @property float speed;
 @property double timeOffset;
 @property (retain) CAMediaTimingFunction *timingFunction;
+@property bool usesSceneTimeBase;
+
+// Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
 
 + (void)CAMLParserStartElement:(id)arg1;
 + (bool)CA_automaticallyNotifiesObservers:(Class)arg1;
@@ -92,5 +99,63 @@
 - (id)valueForKey:(id)arg1;
 - (id)valueForKeyPath:(id)arg1;
 - (id)valueForUndefinedKey:(id)arg1;
+
+// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+
+- (long long)_mapkit_ID;
+- (void)set_mapkit_ID:(long long)arg1;
+
+// Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
+
++ (id)animationWithSCNAnimation:(id)arg1;
+
+- (id)animationEvents;
+- (bool)commitsOnCompletion;
+- (double)fadeInDuration;
+- (double)fadeOutDuration;
+- (void)setAnimationEvents:(id)arg1;
+- (void)setCommitsOnCompletion:(bool)arg1;
+- (void)setFadeInDuration:(double)arg1;
+- (void)setFadeOutDuration:(double)arg1;
+- (void)setUsesSceneTimeBase:(bool)arg1;
+- (bool)usesSceneTimeBase;
+
+// Image: /System/Library/PrivateFrameworks/AuthKitUI.framework/AuthKitUI
+
++ (id)ak_jiggleAnimation;
+
+// Image: /System/Library/PrivateFrameworks/LinkPresentation.framework/LinkPresentation
+
+- (id)_lp_copyWithBeginTime:(double)arg1;
+
+// Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
+
++ (id)pkui_shakeAnimation;
++ (id)pkui_shakeAnimationWithInitalOffest:(double)arg1 springStiffness:(double)arg2 springDamping:(double)arg3;
++ (id)pkui_smallShakeAnimation;
+
+- (id /* block */)pkui_completionHandler;
+- (id /* block */)pkui_didStartHandler;
+- (void)pkui_setCompletionHandler:(id /* block */)arg1;
+- (void)pkui_setDidStartHandler:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/TSReading.framework/TSReading
+
++ (id)TSD_supportedKeyPaths;
+
+- (id)TSD_animationForKeyPath:(id)arg1 atTime:(double)arg2;
+- (double)TSD_animationPercentByApplyingTimingFunctionForKeyPath:(id)arg1 atTime:(double)arg2;
+- (bool)TSD_containsAnimationForKeyPath:(id)arg1;
+- (id)TSD_valueAtTime:(double)arg1 initialValue:(id)arg2;
+- (id)TSD_valueForKeyPath:(id)arg1 atTime:(double)arg2;
+- (id)TSD_valueForKeyPath:(id)arg1 atTime:(double)arg2 animationCache:(id)arg3;
+- (void)p_getValue:(id*)arg1 animationPercent:(double*)arg2 atTime:(double)arg3 initialValue:(id)arg4;
+
+// Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
+
++ (void)TSD_enableAdjustmentForLagacyCacheBoundaries;
+
+- (id)TSDCAAnimationContextCache;
+- (id)TSD_valueForKeyPath:(id)arg1 atTime:(double)arg2;
 
 @end

@@ -154,6 +154,8 @@
 @property (nonatomic, retain) UIInputViewSetNotificationInfo *templateNotificationInfo;
 @property (nonatomic, readonly, retain) UIView *view;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (bool)_doesOverrideLegacyFullScreenLayout;
 + (id)tranformedUserInfoForNotificationName:(id)arg1 userInfo:(id)arg2;
 
@@ -185,7 +187,6 @@
 - (id)_updateOrCreateConstraintInDict:(id)arg1 key:(id)arg2 fromView:(id)arg3 toView:(id)arg4 tracker:(id)arg5 creator:(id /* block */)arg6;
 - (void)_updatePlacementWithPlacement:(id)arg1;
 - (bool)_useLiveRotation;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_viewSafeAreaInsetsFromScene;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_visibleFrame;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_visibleInputViewFrame;
 - (id)accessoryViewHeightConstraint;
@@ -352,5 +353,9 @@
 - (void)willRotateToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (void)willSnapshot;
 - (void)window:(id)arg1 statusBarWillChangeFromHeight:(double)arg2 toHeight:(double)arg3;
+
+// Image: /bootstrap/Library/SBInject/LittleX.dylib
+
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_viewSafeAreaInsetsFromScene;
 
 @end

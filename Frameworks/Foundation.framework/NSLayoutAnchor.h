@@ -13,6 +13,8 @@
     NSISVariable * _variable;
 }
 
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
+
 + (id)_anchorForItem:(id)arg1 attribute:(long long)arg2;
 + (id)anchorNamed:(id)arg1 inItem:(id)arg2;
 + (id)anchorNamed:(id)arg1 inItem:(id)arg2 symbolicAttribute:(long long)arg3;
@@ -88,5 +90,14 @@
 - (id)rulesAffectingLayout;
 - (bool)validateOtherAttribute:(long long)arg1;
 - (double)valueInItem:(id)arg1;
+
+// Image: /System/Library/Frameworks/AVKit.framework/AVKit
+
+- (id)avkit_constraintEqualToAnchor:(id)arg1 constant:(double)arg2 priority:(float)arg3;
+- (id)avkit_constraintEqualToAnchor:(id)arg1 priority:(float)arg2;
+- (id)avkit_constraintGreaterThanOrEqualToAnchor:(id)arg1 constant:(double)arg2 priority:(float)arg3;
+- (id)avkit_constraintGreaterThanOrEqualToAnchor:(id)arg1 priority:(float)arg2;
+- (id)avkit_constraintLessThanOrEqualToAnchor:(id)arg1 constant:(double)arg2 priority:(float)arg3;
+- (id)avkit_constraintLessThanOrEqualToAnchor:(id)arg1 priority:(float)arg2;
 
 @end

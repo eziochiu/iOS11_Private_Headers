@@ -34,6 +34,8 @@
 @property (nonatomic, copy) NSString *title;
 @property (getter=isVisible, nonatomic, readonly) bool visible;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (id)_alertViewForSessionWithRemoteViewController:(id)arg1;
 + (id)_alertViewForWindow:(id)arg1;
 + (bool)_isAlertControllerShimClass;
@@ -178,5 +180,10 @@
 - (int)titleMaxLineCount;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })titleRect;
 - (id)window;
+
+// Image: /System/Library/PrivateFrameworks/TSReading.framework/TSReading
+
+- (id)initWithError:(id)arg1;
+- (void)showWithCompletionHandler:(id /* block */)arg1;
 
 @end

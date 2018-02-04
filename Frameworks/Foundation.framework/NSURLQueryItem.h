@@ -10,6 +10,8 @@
 @property (readonly) NSString *name;
 @property (readonly) NSString *value;
 
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
+
 + (bool)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)queryItemWithName:(id)arg1 value:(id)arg2;
 + (bool)supportsSecureCoding;
@@ -25,5 +27,14 @@
 - (bool)isEqual:(id)arg1;
 - (id)name;
 - (id)value;
+
+// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
+
+- (id)_geo_unescapedValue;
+
+// Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
+
++ (id)queryItemForHandleType:(long long)arg1;
++ (id)queryItemValueForHandleType:(long long)arg1;
 
 @end

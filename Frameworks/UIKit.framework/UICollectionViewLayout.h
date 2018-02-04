@@ -65,6 +65,8 @@
 @property (getter=_siblingLayout, setter=_setSiblingLayout:, nonatomic) UICollectionViewLayout *siblingLayout;
 @property (getter=_sublayoutType, setter=_setSublayoutType:, nonatomic) long long sublayoutType;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (Class)invalidationContextClass;
 + (Class)layoutAttributesClass;
 
@@ -179,5 +181,13 @@
 - (id)targetIndexPathForInteractivelyMovingItem:(id)arg1 withPosition:(struct CGPoint { double x1; double x2; })arg2;
 - (struct CGPoint { double x1; double x2; })transitionContentOffsetForProposedContentOffset:(struct CGPoint { double x1; double x2; })arg1 keyItemIndexPath:(id)arg2;
 - (struct CGPoint { double x1; double x2; })updatesContentOffsetForProposedContentOffset:(struct CGPoint { double x1; double x2; })arg1;
+
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
+- (id)pu_layoutAttributesForElementClosestToPoint:(struct CGPoint { double x1; double x2; })arg1 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 passingTest:(id /* block */)arg3;
+
+// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
+
+- (void)music_collectionViewInheritedLayoutInsetsDidChange;
 
 @end

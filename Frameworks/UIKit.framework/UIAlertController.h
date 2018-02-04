@@ -92,6 +92,8 @@
 @property (getter=_titleLineBreakMode, setter=_setTitleLineBreakMode:, nonatomic) long long titleLineBreakMode;
 @property (getter=_titleMaximumLineCount, setter=_setTitleMaximumLineCount:, nonatomic) long long titleMaximumLineCount;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (id)_alertControllerContainedInViewController:(id)arg1;
 + (id)_alertControllerWithTitle:(id)arg1 message:(id)arg2;
 + (bool)_shouldUsePresentationController;
@@ -291,5 +293,55 @@
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (id)visualStyleForAlertControllerStyle:(long long)arg1 traitCollection:(id)arg2 descriptor:(id)arg3;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
+
+// Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
+
++ (id)mf_actionSheetWithTitle:(id)arg1 cancellationHandler:(id /* block */)arg2;
++ (id)mutedThreadActionAlertControllerWithHandler:(id /* block */)arg1;
++ (id)notifyMeConfirmationControllerWithHandler:(id /* block */)arg1;
+
+- (void)mf_addCancelActionWithHandler:(id /* block */)arg1;
+- (void)mf_presentFromViewController:(id)arg1 withSourceView:(id)arg2;
+
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
++ (id)pu_alertForCPLEnableError:(id)arg1 actionHandler:(id /* block */)arg2 cancelHandler:(id /* block */)arg3;
++ (id)pu_alertForStorageUpgradeLoadFailure;
++ (id)pu_deleteITunesContentAlertWithAssetCount:(long long)arg1 includesPhotos:(bool)arg2 includesVideos:(bool)arg3 actionHandler:(id /* block */)arg4 cancelHandler:(id /* block */)arg5;
+
+// Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
+
++ (void)cam_showUsageSettings;
+
+- (id)initWithTitle:(id)arg1 message:(id)arg2;
+- (id)initWithTitle:(id)arg1 message:(id)arg2 lowDiskSpaceAlertType:(long long)arg3 dismissActionHandler:(id /* block */)arg4 resultActionHandler:(id /* block */)arg5;
+- (id)initWithType:(long long)arg1 captureMode:(long long)arg2 dismissActionHandler:(id /* block */)arg3 resultActionHandler:(id /* block */)arg4;
+
+// Image: /System/Library/PrivateFrameworks/ClassroomKit.framework/ClassroomKit
+
++ (id)crk_alertWithTitle:(id)arg1 message:(id)arg2 cancelButtonTitle:(id)arg3 confirmButtonTitle:(id)arg4 confirmBlock:(id /* block */)arg5;
++ (id)crk_alertWithTitle:(id)arg1 message:(id)arg2 cancelButtonTitle:(id)arg3 confirmButtonTitle:(id)arg4 destructiveTitle:(bool)arg5 confirmBlock:(id /* block */)arg6;
++ (id)crk_destructiveAlertWithTitle:(id)arg1 message:(id)arg2 cancelButtonTitle:(id)arg3 confirmButtonTitle:(id)arg4 confirmBlock:(id /* block */)arg5;
+
+// Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
+
+- (void)_gkAddCancelButtonWithNoAction;
+
+// Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
+
++ (id)alertControllerForAddingDestinationWithType:(unsigned long long)arg1 andProceed:(id /* block */)arg2;
++ (id)alertControllerForAddingDestinationWithTypeString:(id)arg1 andProceed:(id /* block */)arg2;
++ (id)alertControllerForAddingHomeWithProceed:(id /* block */)arg1;
++ (id)alertControllerForAddingRoomWithProceed:(id /* block */)arg1;
++ (id)alertControllerForAddingServiceGroupWithProceed:(id /* block */)arg1;
++ (id)alertControllerForAddingZoneWithProceed:(id /* block */)arg1;
++ (id)hu_alertControllerForUnimplementedFeature:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
+
++ (id)enableWiFiCallingAlertController;
++ (id)enableWiFiCallingAlertControllerWithPreferredStyle:(long long)arg1;
++ (id)networkUnavailableAlertControllerWithCallProvider:(id)arg1 dialType:(long long)arg2;
++ (id)networkUnavailableAlertControllerWithCallProvider:(id)arg1 dialType:(long long)arg2 preferredStyle:(long long)arg3;
 
 @end

@@ -73,6 +73,8 @@
 @property (nonatomic) struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; } transform3D;
 @property (nonatomic) long long zIndex;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (id)layoutAttributesForCellWithIndexPath:(id)arg1;
 + (id)layoutAttributesForDecorationViewOfKind:(id)arg1 withIndexPath:(id)arg2;
 + (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 withIndexPath:(id)arg2;
@@ -121,5 +123,14 @@
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transform;
 - (struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })transform3D;
 - (long long)zIndex;
+
+// Image: /System/Library/PrivateFrameworks/NewsFeedLayout.framework/NewsFeedLayout
+
++ (id)attributesFromProtobuf:(id)arg1;
++ (id)attributesFromProtobufData:(id)arg1;
+
+- (void)populateWithProtobuf:(id)arg1;
+- (id)protobufRepresentation;
+- (id)serializeToProtobuf;
 
 @end

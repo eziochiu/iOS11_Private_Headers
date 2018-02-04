@@ -17,6 +17,8 @@
 @property double strokeEnd;
 @property double strokeStart;
 
+// Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
+
 + (bool)CA_automaticallyNotifiesObservers:(Class)arg1;
 + (bool)_hasRenderLayerSubclass;
 + (id)defaultValueForKey:(id)arg1;
@@ -52,5 +54,15 @@
 - (struct CGColor { }*)strokeColor;
 - (double)strokeEnd;
 - (double)strokeStart;
+
+// Image: /System/Library/PrivateFrameworks/TSReading.framework/TSReading
+
+- (void)setCGLineCap:(int)arg1;
+- (void)setCGLineJoin:(int)arg1;
+
+// Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
+
+- (void)setCGLineCap:(int)arg1;
+- (void)setCGLineJoin:(int)arg1;
 
 @end

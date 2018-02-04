@@ -60,6 +60,8 @@
 @property (nonatomic, readonly) bool wantsCrossfade;
 @property (nonatomic) double width;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (bool)_isModernStyle:(long long)arg1;
 + (id)_loadResourcesForStyle:(long long)arg1;
 + (struct CGSize { double x1; double x2; })defaultSizeForStyle:(long long)arg1;
@@ -160,5 +162,14 @@
 - (bool)useOutlineShadow;
 - (bool)wantsCrossfade;
 - (double)width;
+
+// Image: /System/Library/PrivateFrameworks/AppSupportUI.framework/AppSupportUI
+
+- (bool)supportsAsynchronousMeasurement;
+
+// Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
+
+- (void)pk_applyAppearance:(id)arg1;
+- (id)pk_childrenForAppearance;
 
 @end

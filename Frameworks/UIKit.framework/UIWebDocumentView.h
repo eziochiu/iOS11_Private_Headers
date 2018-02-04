@@ -332,6 +332,8 @@
 @property (nonatomic, readonly) bool wantsMinimalUI;
 @property (nonatomic) <UIWebDraggingDelegate> *webDraggingDelegate;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (id)_createDefaultHighlightView;
 + (id)_sharedHighlightView;
 + (double)getTimestamp;
@@ -961,5 +963,12 @@
 - (int)wordOffsetInRange:(id)arg1;
 - (void)writeDataToPasteboard:(id)arg1;
 - (double)zoomedDocumentScale;
+
+// Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
+
+- (id)_mf_URLsForAttachmentsInRange:(id)arg1 passingTest:(id /* block */)arg2;
+- (id)mf_DOMNodeForAttachment:(id)arg1;
+- (id)mf_URLsForAttachmentsBorderingRange:(id)arg1;
+- (id)mf_URLsForAttachmentsInRange:(id)arg1;
 
 @end

@@ -15,6 +15,8 @@
 @property (readonly, retain) id reversedSortDescriptor;
 @property (readonly) SEL selector;
 
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
+
 + (id)_defaultSelectorName;
 + (void)initialize;
 + (id)sortDescriptorWithKey:(id)arg1 ascending:(bool)arg2;
@@ -45,5 +47,17 @@
 - (id)replacementObjectForPortCoder:(id)arg1;
 - (id)reversedSortDescriptor;
 - (SEL)selector;
+
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+
+- (int)_MPMediaLibraryEntityTranslator_MLCoreSortDescriptorOrdering;
+
+// Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
+
+- (id)CKDPQuerySort;
+
+// Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
+
+- (id)FCCKPQuerySort;
 
 @end

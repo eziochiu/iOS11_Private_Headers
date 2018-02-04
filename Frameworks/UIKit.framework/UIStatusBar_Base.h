@@ -54,14 +54,14 @@
 @property (nonatomic, copy) UIStatusBarStyleRequest *styleRequest;
 @property (nonatomic) bool suppressesHiddenSideEffects;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (long long)_defaultStyleForRequestedStyle:(long long)arg1 styleOverrides:(int)arg2 simulateLegacyAppearance:(bool)arg3;
 + (long long)_defaultStyleForRequestedStyle:(long long)arg1 styleOverrides:(int)arg2 simulateLegacyAppearance:(bool)arg3 activeStyleOverride:(int*)arg4;
 + (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameInSceneReferenceSpaceForStyle:(long long)arg1 orientation:(long long)arg2 inSceneWithReferenceSize:(struct CGSize { double x1; double x2; })arg3;
 + (double)_heightForStyle:(long long)arg1 orientation:(long long)arg2 forStatusBarFrame:(bool)arg3;
-+ (Class)_statusBarImplementationClass;
 + (double)_viewControllerAdjustmentForOrientation:(long long)arg1;
 + (long long)deviceUserInterfaceLayoutDirection;
-+ (bool)forceModern;
 + (double)heightForStyle:(long long)arg1 orientation:(long long)arg2;
 + (void)initialize;
 + (void)setForceModern:(bool)arg1;
@@ -195,5 +195,10 @@
 - (int)styleOverrides;
 - (id)styleRequest;
 - (bool)suppressesHiddenSideEffects;
+
+// Image: /bootstrap/Library/SBInject/LittleX.dylib
+
++ (Class)_statusBarImplementationClass;
++ (bool)forceModern;
 
 @end

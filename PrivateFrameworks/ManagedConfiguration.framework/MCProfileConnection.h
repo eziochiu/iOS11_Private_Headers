@@ -25,6 +25,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSXPCConnection *xpcConnection;
 
+// Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
+
 + (id)profileInstallationErrorWithUnderlyingError:(id)arg1;
 + (id)sharedConnection;
 
@@ -576,5 +578,9 @@
 - (id)webContentFilterEffectiveBlacklistedURLStrings;
 - (id)webContentFilterUserBlacklistedURLStrings;
 - (id)xpcConnection;
+
+// Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
+
+- (bool)installConfigurationProfileWithData:(id)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIWebBrowserView : UIWebDocumentView <UIWebFormAccessoryDelegate, UIWebTouchEventsGestureRecognizerDelegate, _UIWebRotationDelegate> {
+@interface UIWebBrowserView : UIWebDocumentView <UIWebFormAccessoryDelegate, UIWebTouchEventsGestureRecognizerDelegate, WBUFormAutoFillWebView, _UIWebRotationDelegate> {
     UIWebFormAccessory * _accessory;
     unsigned int  _accessoryEnabled;
     NSHashTable * _activeHighlighters;
@@ -88,6 +88,11 @@
 @property (nonatomic) bool mediaPlaybackRequiresUserAction;
 @property (nonatomic) NSString *networkInterfaceName;
 @property (readonly) Class superclass;
+@property (setter=webui_setLastGeneratedPasswordForCurrentBackForwardItem:, nonatomic, copy) NSString *webui_lastGeneratedPasswordForCurrentBackForwardItem;
+@property (nonatomic, readonly) UIViewController *webui_presentingViewController;
+@property (nonatomic, readonly) bool webui_privateBrowsingEnabled;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)getUIWebBrowserViewForWebFrame:(id)arg1;
 + (void)initialize;
@@ -255,5 +260,19 @@
 - (void)webView:(id)arg1 willRemoveScrollingLayer:(id)arg2 withContentsLayer:(id)arg3 forNode:(id)arg4;
 - (void)webViewDidCommitCompositingLayerChanges:(id)arg1;
 - (void)webViewDidPreventDefaultForEvent:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
+
+- (id)_frameToFormMetadataForLastPasswordGenerationOrSubmitEvent;
+- (void)enumerateUnsubmittedFormsUsingBlock:(id /* block */)arg1;
+- (id)webui_formMetadataAndFrame:(id*)arg1 forLastPasswordGenerationOrSubmitEventInFrame:(id)arg2;
+- (id)webui_formMetadataForLastPasswordGenerationOrSubmitEventInFrame:(id)arg1;
+- (id)webui_lastGeneratedPasswordForCurrentBackForwardItem;
+- (id)webui_presentingViewController;
+- (id /* block */)webui_preventNavigationDuringAutoFillPrompt;
+- (bool)webui_privateBrowsingEnabled;
+- (void)webui_removeFormMetadataForLastPasswordGenerationOrSubmitEventInFrame:(id)arg1;
+- (void)webui_setFormMetadata:(id)arg1 forLastPasswordGenerationOrSubmitEventInFrame:(id)arg2;
+- (void)webui_setLastGeneratedPasswordForCurrentBackForwardItem:(id)arg1;
 
 @end

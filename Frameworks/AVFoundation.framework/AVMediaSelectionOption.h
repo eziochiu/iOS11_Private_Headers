@@ -6,18 +6,30 @@
     AVMediaSelectionOptionInternal * _mediaSelectionOption;
 }
 
+@property (getter=isAC3Only, readonly) bool AC3Only;
+@property (getter=isCC, readonly) bool CC;
+@property (getter=isSDH, readonly) bool SDH;
+@property (getter=isAuxiliary, readonly) bool auxiliary;
 @property (nonatomic, readonly) NSArray *availableMetadataFormats;
 @property (nonatomic, readonly) NSArray *commonMetadata;
 @property (nonatomic, readonly) NSString *displayName;
+@property (getter=isEasyReader, readonly) bool easyReader;
 @property (nonatomic, readonly) NSString *extendedLanguageTag;
 @property (nonatomic, readonly) NSLocale *locale;
+@property (nonatomic, readonly) NSString *localizedDisplayName;
+@property (getter=isMain, readonly) bool main;
 @property (nonatomic, readonly) NSArray *mediaSubTypes;
 @property (nonatomic, readonly) NSString *mediaType;
+@property (nonatomic, readonly) bool mpIsOnlyAC3;
+@property (nonatomic, readonly) bool mpIsSDH;
 @property (getter=isPlayable, nonatomic, readonly) bool playable;
+@property (nonatomic, readonly) NSString *shortLocalizedDisplayName;
 @property (nonatomic, readonly) AVAssetTrack *track;
 @property (nonatomic, readonly) int trackID;
 @property (nonatomic, readonly) NSString *unicodeLanguageCode;
 @property (nonatomic, readonly) NSString *unicodeLanguageIdentifier;
+
+// Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
 
 + (bool)_plistHasOptionIdentifier:(id)arg1;
 + (id)mediaSelectionOptionForAsset:(id)arg1 group:(id)arg2 dictionary:(id)arg3 hasUnderlyingTrack:(bool)arg4;
@@ -68,5 +80,24 @@
 - (int)trackID;
 - (id)unicodeLanguageCode;
 - (id)unicodeLanguageIdentifier;
+
+// Image: /System/Library/Frameworks/AVKit.framework/AVKit
+
+- (bool)isAC3Only;
+- (bool)isAuxiliary;
+- (bool)isCC;
+- (bool)isEasyReader;
+- (bool)isMain;
+- (bool)isSDH;
+- (long long)languageCompare:(id)arg1;
+- (id)localizedDisplayName;
+- (id)shortLocalizedDisplayName;
+
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+
+- (id)_languageOptionIdentifier;
+- (id)makeNowPlayingInfoLanguageOption;
+- (bool)mpIsOnlyAC3;
+- (bool)mpIsSDH;
 
 @end

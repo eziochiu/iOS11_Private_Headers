@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UITabBarController : UIViewController <NSCoding, UIGestureRecognizerDelegate, UILayoutContainerViewDelegate, UITabBarDelegate> {
+@interface UITabBarController : UIViewController <GKContentRefresh, GKURLHandling, NSCoding, UIGestureRecognizerDelegate, UILayoutContainerViewDelegate, UITabBarDelegate> {
     <UIViewControllerAnimatedTransitioning> * __animator;
     NSString * __backdropGroupName;
     <UIViewControllerInteractiveTransitioning> * __interactor;
@@ -55,12 +55,16 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableArray *moreChildViewControllers;
 @property (nonatomic, readonly) UINavigationController *moreNavigationController;
+@property (nonatomic, readonly) bool pu_isTabBarHidden;
+@property (getter=px_isTabBarHidden, nonatomic, readonly) bool px_tabBarHidden;
 @property (getter=_rememberedFocusedItemsByViewController, nonatomic, readonly) NSMapTable *rememberedFocusedItemsByViewController;
 @property (nonatomic) unsigned long long selectedIndex;
 @property (nonatomic) UIViewController *selectedViewController;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UITabBar *tabBar;
 @property (nonatomic, copy) NSArray *viewControllers;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (bool)_directlySetsContentOverlayInsetsForChildren;
 + (Class)_moreNavigationControllerClass;
@@ -250,5 +254,39 @@
 - (void)willAnimateSecondHalfOfRotationFromInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (void)willRotateToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
+
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
+- (bool)pu_isTabBarHidden;
+
+// Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
+
+- (void)_gkForceNextContentUpdate;
+- (void)_gkHandleURLPathComponents:(id)arg1 query:(id)arg2;
+- (void)_gkRefreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2;
+- (void)_gkResetContents;
+- (void)_gkSetContentsNeedUpdateWithHandler:(id /* block */)arg1;
+- (bool)_gkShouldRefreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2;
+- (void)_gkUpdateContentsWithCompletionHandlerAndError:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
+
+- (id)hu_presentedItem;
+
+// Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
+
+- (double)px_HDRFocus;
+- (bool)px_canPerformAddToTabAnimationForTab:(unsigned long long)arg1;
+- (id)px_diagnosticsItemProvidersForPoint:(struct CGPoint { double x1; double x2; })arg1 inCoordinateSpace:(id)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })px_frameForTabItem:(unsigned long long)arg1 inCoordinateSpace:(id)arg2;
+- (double)px_imageModulationIntensity;
+- (bool)px_isImageModulationEnabled;
+- (bool)px_isTabBarHidden;
+- (id)px_navigateToMemoryWithLocalIdentifier:(id)arg1;
+- (void)px_performAddToTabAnimation:(unsigned long long)arg1 withSnapshotView:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
+
+- (id)selectedNavigationController;
 
 @end

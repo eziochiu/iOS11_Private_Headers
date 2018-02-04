@@ -32,6 +32,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic) bool suppressesIncrementalRendering;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (void)_fixPathsForSandboxDirectoryChange;
 + (id)_relativePathFromAbsolutePath:(id)arg1 removingPathComponents:(unsigned long long)arg2;
 + (void)_updatePersistentStoragePaths;
@@ -211,5 +213,14 @@
 - (void)webViewMainFrameDidFinishLoad:(id)arg1;
 - (void)webViewMainFrameDidFirstVisuallyNonEmptyLayoutInFrame:(id)arg1;
 - (void)webViewSupportedOrientationsUpdated:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AppSupportUI.framework/AppSupportUI
+
+- (bool)isLayoutSizeDependentOnPerpendicularAxis;
+
+// Image: /System/Library/PrivateFrameworks/HelpKit.framework/HelpKit
+
+- (long long)highlightAllOccurencesOfTokens:(id)arg1;
+- (void)removeAllHighlights;
 
 @end

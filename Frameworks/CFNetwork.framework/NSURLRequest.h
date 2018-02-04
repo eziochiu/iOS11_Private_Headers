@@ -12,12 +12,15 @@
 @property (readonly) bool HTTPShouldHandleCookies;
 @property (readonly) bool HTTPShouldUsePipelining;
 @property (readonly, copy) NSURL *URL;
+@property (getter=_gkSAPSession, setter=_gkSetSAPSession:, nonatomic, retain) GKFairPlaySAPSession *_gkSAPSession;
 @property (readonly, copy) NSDictionary *allHTTPHeaderFields;
 @property (readonly) bool allowsCellularAccess;
 @property (readonly) unsigned long long cachePolicy;
 @property (readonly, copy) NSURL *mainDocumentURL;
 @property (readonly) unsigned long long networkServiceType;
 @property (readonly) double timeoutInterval;
+
+// Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
 
 + (bool)allowsAnyHTTPSCertificateForHost:(id)arg1;
 + (id)allowsSpecificHTTPSCertificateForHost:(id)arg1;
@@ -75,5 +78,40 @@
 - (unsigned long long)networkServiceType;
 - (double)timeoutInterval;
 - (id)valueForHTTPHeaderField:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AuthKit.framework/AuthKit
+
+- (bool)ak_usesHTTPSScheme;
+
+// Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
+
+- (id)DARequestByApplyingStorageSession:(struct __CFURLStorageSession { }*)arg1;
+
+// Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
+
+- (id)_gkDictionaryKey;
+- (id)_gkSAPSession;
+- (void)_gkSetSAPSession:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
+
++ (id)frRequestWithURL:(id)arg1;
++ (id)frRequestWithURL:(id)arg1 cachePolicy:(unsigned long long)arg2 timeoutInterval:(double)arg3;
++ (id)overrideUserAgent;
++ (void)setupFeldsparUserAgent;
+
+// Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
+
+- (id)HTTPBodyString;
+
+// Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
+
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/iTunesCloud.framework/iTunesCloud
+
+- (id)ic_valueForHTTPHeaderField:(id)arg1;
+- (id)ic_valuesForCookieWithName:(id)arg1;
 
 @end

@@ -11,12 +11,15 @@
     JSVirtualMachine * m_virtualMachine;
 }
 
+@property (nonatomic, readonly) RWIProtocolInspector *_inspector;
 @property (retain) JSValue *exception;
 @property (copy) id /* block */ exceptionHandler;
 @property (readonly) JSValue *globalObject;
 @property (copy) NSString *name;
 @property (readonly) JSVirtualMachine *virtualMachine;
 @property (readonly, retain) JSWrapperMap *wrapperMap;
+
+// Image: /System/Library/Frameworks/JavaScriptCore.framework/JavaScriptCore
 
 + (id)contextWithJSGlobalContextRef:(struct OpaqueJSContext { }*)arg1;
 + (id)currentArguments;
@@ -58,5 +61,9 @@
 - (id)wrapperForJSObject:(struct OpaqueJSValue { }*)arg1;
 - (id)wrapperForObjCObject:(id)arg1;
 - (id)wrapperMap;
+
+// Image: /System/Library/PrivateFrameworks/WebInspector.framework/WebInspector
+
+- (id)_inspector;
 
 @end

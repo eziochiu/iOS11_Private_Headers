@@ -165,6 +165,7 @@
 @property (nonatomic) long long focusStyle;
 @property (readonly) unsigned long long hash;
 @property (getter=isHighlighted, nonatomic) bool highlighted;
+@property (setter=hu_setForcedSeparatorStyle:, nonatomic, copy) NSNumber *hu_forcedSeparatorStyle;
 @property (nonatomic, readonly) UIImageView *imageView;
 @property (nonatomic) long long indentationLevel;
 @property (nonatomic) double indentationWidth;
@@ -183,6 +184,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UILabel *textLabel;
 @property (nonatomic) bool userInteractionEnabledWhileDragging;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)_defaultTopShadowColor;
 + (void)_initializeForIdiom:(long long)arg1;
@@ -644,5 +647,52 @@
 - (bool)wasSwiped;
 - (void)willMoveToSuperview:(id)arg1;
 - (void)willTransitionToState:(unsigned long long)arg1;
+
+// Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
+
+- (void)_cnui_applyCommonContactStyle:(id)arg1;
+- (void)_cnui_applyContactStyle;
+- (void)_cnui_applySelectedBackgroundViewStyle:(id)arg1;
+
+// Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
+
+- (void)sf_setUsesVibrantSelection:(bool)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AppSupportUI.framework/AppSupportUI
+
+- (double)effectiveSeparatorHeight;
+
+// Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
+
++ (id)_hu_emptyCheckmarkPlaceholderImage;
+
+- (void)hu_configureCheckmarkForImageView:(id)arg1 checked:(bool)arg2;
+- (id)hu_forcedSeparatorStyle;
+- (void)hu_setForcedSeparatorStyle:(id)arg1;
+- (void)hu_setSelectedBackgroundColor:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/ManagedConfigurationUI.framework/ManagedConfigurationUI
+
+- (void)setMCUIApplication:(id)arg1 showMISAppApproval:(bool)arg2;
+
+// Image: /System/Library/PrivateFrameworks/MobileTimerUI.framework/MobileTimerUI
+
+- (void)setSelectedBackgroundColor:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NetAppsUtilitiesUI.framework/NetAppsUtilitiesUI
+
++ (double)naui_estimatedTableRowHeight;
++ (id)naui_prototypeCell;
++ (bool)naui_supportsAutoLayout;
++ (double)naui_tableRowHeight;
+
+// Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
+
+- (void)pk_applyAppearance:(id)arg1;
+- (id)pk_childrenForAppearance;
+
+// Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
+
+- (id)accessibilityTableViewCellText;
 
 @end

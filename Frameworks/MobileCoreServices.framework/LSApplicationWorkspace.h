@@ -10,6 +10,8 @@
 @property (readonly) NSMutableDictionary *createdInstallProgresses;
 @property (readonly) LSInstallProgressList *observedInstallProgresses;
 
+// Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
+
 + (id)_remoteObserver;
 + (id)activeManagedConfigurationRestrictionUUIDs;
 + (id)callbackQueue;
@@ -128,5 +130,19 @@
 - (bool)updateRecordForApp:(id)arg1 withSINF:(id)arg2 iTunesMetadata:(id)arg3 placeholderMetadata:(id)arg4 sendNotification:(int)arg5 error:(id*)arg6;
 - (bool)updateSINFWithData:(id)arg1 forApplication:(id)arg2 options:(id)arg3 error:(id*)arg4;
 - (bool)updateiTunesMetadataWithData:(id)arg1 forApplication:(id)arg2 options:(id)arg3 error:(id*)arg4;
+
+// Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
+
+- (void)_sf_openURL:(id)arg1 inApplication:(id)arg2 withOptions:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)_sf_openURL:(id)arg1 withOptions:(id)arg2 completionHandler:(id /* block */)arg3;
+
+// Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
+
+- (void)af_enumerateInstalledApplicationsWithBlock:(id /* block */)arg1;
+- (void)af_enumerateUserVisibleApplicationsWithBlock:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/ManagedConfigurationUI.framework/ManagedConfigurationUI
+
+- (id)blacklistedApps;
 
 @end

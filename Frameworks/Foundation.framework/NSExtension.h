@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSExtension : NSObject <_NSExtensionContextHosting> {
+@interface NSExtension : NSObject <CXCallDirectoryStoreMigratorExtension, _NSExtensionContextHosting> {
     NSSet * __allowedErrorClasses;
     long long  __assertionRefCount;
     NSBundle * __extensionBundle;
@@ -43,15 +43,21 @@
 @property (retain) id _stashedPlugInConnection;
 @property (nonatomic, copy) NSDictionary *attributes;
 @property (nonatomic, copy) NSUUID *connectionUUID;
+@property (nonatomic, readonly) NSURL *containingAppURL;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (getter=isEnabledViaPlugInKit, nonatomic, readonly) bool enabledViaPlugInKit;
 @property (nonatomic, copy) NSString *extensionPointIdentifier;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSArray *icons;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, copy) NSDictionary *infoDictionary;
+@property (nonatomic, readonly) NSString *localizedContainingAppName;
+@property (nonatomic, readonly) NSString *localizedName;
 @property (getter=_isObservingHostAppStateChanges, setter=_setObservingHostAppStateChanges:, nonatomic) bool observingHostAppStateChanges;
 @property (nonatomic, readonly) bool optedIn;
+@property (nonatomic, readonly) LSPlugInKitProxy *plugInKitProxy;
+@property (nonatomic, readonly) NSIndexSet *pu_supportedMediaTypes;
 @property (nonatomic, copy) id /* block */ requestCancellationBlock;
 @property (nonatomic, copy) id /* block */ requestCompletionBlock;
 @property (nonatomic, copy) id /* block */ requestInterruptionBlock;
@@ -163,10 +169,99 @@
 - (void)set_stashedPlugInConnection:(id)arg1;
 - (id)version;
 
+// Image: /System/Library/Frameworks/CallKit.framework/CallKit
+
+- (id)containingAppURL;
+- (bool)isEnabledViaPlugInKit;
+- (id)localizedContainingAppName;
+- (id)localizedName;
+- (id)plugInKitProxy;
+
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
++ (id)_extensionMatchingDictionaryForIntentClassNames:(id)arg1 extensionPointName:(id)arg2 launchId:(id)arg3;
++ (void)_findAppsWithAnyIntentsExtensionCheckingSiriEnabledUseFilter:(long long)arg1 completion:(id /* block */)arg2;
++ (id)_intents_extensionMatchingAttributesForIntents:(id)arg1;
++ (void)_intents_findAppsWithAnIntentsServiceExtension:(id /* block */)arg1;
++ (void)_intents_findPossibleSiriEnabledAppsWithAnIntentsServiceExtension:(id /* block */)arg1;
++ (void)_intents_findSiriEntitledAppsContainingAnIntentsExtensionWithCompletion:(id /* block */)arg1;
++ (void)_intents_matchExtensionsForIntent:(id)arg1 completion:(id /* block */)arg2;
++ (void)_intents_matchExtensionsForIntent:(id)arg1 shouldIgnoreLaunchId:(bool)arg2 completion:(id /* block */)arg3;
++ (void)_intents_matchSiriExtensionsForIntent:(id)arg1 completion:(id /* block */)arg2;
++ (void)_intents_matchSiriUIExtensionsForIntent:(id)arg1 completion:(id /* block */)arg2;
++ (void)_intents_matchSiriUISnippetExtensionsWithCompletion:(id /* block */)arg1;
++ (void)_intents_matchUIExtensionsForIntent:(id)arg1 completion:(id /* block */)arg2;
++ (id)_intents_uiExtensionMatchingAttributesForIntents:(id)arg1;
++ (void)_matchExtensionsForIntent:(id)arg1 extensionPointName:(id)arg2 shouldCheckForSiriEnabled:(bool)arg3 completion:(id /* block */)arg4;
++ (void)_matchExtensionsForIntent:(id)arg1 extensionPointName:(id)arg2 shouldCheckForSiriEnabled:(bool)arg3 shouldIgnoreLaunchId:(bool)arg4 completion:(id /* block */)arg5;
++ (void)_matchExtensionsWithAttributes:(id)arg1 extensionPointName:(id)arg2 completion:(id /* block */)arg3;
++ (void)_matchSnippetExtensionsWithExtensionPointName:(id)arg1 completion:(id /* block */)arg2;
++ (bool)appAllowedToTalkToSiri:(id)arg1;
+
+- (bool)_intents_extensionSupportsAtLeastOneSiriIntent;
+
+// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+
+- (bool)_canSupportIntent:(id)arg1;
+- (bool)_canSupportIntentClass:(Class)arg1;
+- (id)_containingAppDisplayName;
+- (id)_containingAppIdentifer;
+- (id)_displayName;
+- (id)_extensionVendorContextForUUID:(id)arg1 withErrorHandler:(id /* block */)arg2;
+- (id)_iconWithFormat:(int)arg1;
+- (unsigned long long)_mapExtensionType;
+
+// Image: /System/Library/Frameworks/ReplayKit.framework/ReplayKit
+
++ (void)extensionsWithMatchingPointName:(id)arg1 activationRule:(id)arg2 completion:(id /* block */)arg3;
++ (void)extensionsWithMatchingPointName:(id)arg1 baseIdentifier:(id)arg2 activationRule:(id)arg3 unwantedActivationRule:(id)arg4 completion:(id /* block */)arg5;
++ (void)extensionsWithMatchingPointName:(id)arg1 baseIdentifier:(id)arg2 completion:(id /* block */)arg3;
++ (void)extensionsWithMatchingPointName:(id)arg1 baseIdentifier:(id)arg2 unwantedActivationRule:(id)arg3 completion:(id /* block */)arg4;
++ (void)extensionsWithMatchingPointName:(id)arg1 completion:(id /* block */)arg2;
++ (void)extensionsWithMatchingPointName:(id)arg1 unwantedActivationRule:(id)arg2 completion:(id /* block */)arg3;
+
+- (long long)processMode;
+
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 - (id)__UIKit_upcall_icons;
 - (void)instantiateViewControllerWithInputItems:(id)arg1 connectionHandler:(id /* block */)arg2;
 - (void)instantiateViewControllerWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 connectionHandler:(id /* block */)arg3;
+
+// Image: /System/Library/PrivateFrameworks/ContactsDonation.framework/ContactsDonation
+
+- (id)_cnd_requestWithInputItems:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/IntentsCore.framework/IntentsCore
+
+- (void)_intents_startExtensionConnectionWithExtensionInputItems:(id)arg1 intent:(id)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
+
+// Image: /System/Library/PrivateFrameworks/PhotosEditUI.framework/PhotosEditUI
+
+- (id)pu_supportedMediaTypes;
+- (bool)pu_supportsMediaType:(unsigned long long)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
+
+- (id)_siriui_extensionIconImage;
+- (id)_siriui_iconImageWithFormat:(int)arg1;
+- (id)siriui_displayName;
+- (id)siriui_iconImage;
+
+// Image: /System/Library/PrivateFrameworks/UserNotificationsServer.framework/UserNotificationsServer
+
+- (id)uns_extensionContainerBundleIdentifier;
+- (id)uns_extensionContainerBundleProxy;
+- (bool)uns_isExtensionSessionBeingDebugged:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/UserNotificationsUIKit.framework/UserNotificationsUIKit
+
+- (id)nc_extensionContainerBundleIdentifier;
+- (id)nc_extensionContainerBundleProxy;
+
+// Image: /System/Library/PrivateFrameworks/Widgets.framework/Widgets
+
+- (id)wg_description;
+- (bool)wg_hasExplicitUserElectionState;
 
 @end

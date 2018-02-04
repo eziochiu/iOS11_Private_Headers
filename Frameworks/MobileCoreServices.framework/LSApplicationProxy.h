@@ -263,6 +263,10 @@
 - (id)vendorName;
 - (id)watchKitVersion;
 
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
+- (bool)_inapptrust_isFirstParty;
+
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 - (struct CGSize { double x1; double x2; })_defaultStyleSize:(id)arg1;
@@ -272,5 +276,42 @@
 
 - (id)un_applicationBundleIdentifier;
 - (id)un_applicationBundleURL;
+
+// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
+
+- (id)__ck_messagesPluginKitProxy;
+
+// Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/MDM.framework/MDM
+
+- (bool)isMISAuthorized;
+
+// Image: /System/Library/PrivateFrameworks/ManagedConfigurationUI.framework/ManagedConfigurationUI
+
+- (id)appIconForTableCell;
+- (bool)hasAppVPN;
+- (bool)hasManagedRestrictions;
+- (bool)isBlacklisted;
+- (bool)isExcludedFromBackup;
+- (bool)isExcludedFromCloudSync;
+- (bool)isUnableToExportToUnmanaged;
+- (bool)isUnableToImportFromUnmanaged;
+- (bool)isUnableToUseCellData;
+- (bool)isUnableToUseRoamingCellData;
+- (bool)isUninstalledOnMDMRemoval;
+
+// Image: /System/Library/PrivateFrameworks/UserNotificationsServer.framework/UserNotificationsServer
+
++ (id)uns_bundleForBundleIdentifier:(id)arg1;
+
+- (bool)_uns_isReallyInstalled;
+- (id)uns_bundle;
+- (bool)uns_isSystemApplication;
+- (id)uns_path;
+- (bool)uns_requiresLocalNotifications;
+- (bool)uns_sdkVersionOnOrLaterThan:(id)arg1;
+- (bool)uns_shouldUseDefaultDataProvider;
+- (id)uns_universalApplicationIdentifier;
+- (bool)uns_usesCloudKit;
+- (bool)uns_usesLocalNotifications;
 
 @end

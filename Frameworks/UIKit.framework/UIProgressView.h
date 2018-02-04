@@ -31,6 +31,8 @@
 @property (nonatomic, retain) UIImage *trackImage;
 @property (nonatomic, retain) UIColor *trackTintColor;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (void)_fillImagesForIndex:(unsigned long long)arg1 style:(long long)arg2 barStyle:(long long)arg3;
 + (unsigned long long)_indexForStyle:(long long)arg1 barStyle:(long long)arg2;
 + (id)_standardInnerImageForStyle:(long long)arg1 barStyle:(long long)arg2;
@@ -91,5 +93,14 @@
 - (id)trackImage;
 - (id)trackTintColor;
 - (void)traitCollectionDidChange:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AppSupportUI.framework/AppSupportUI
+
+- (bool)supportsAsynchronousMeasurement;
+
+// Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
+
+- (void)pk_applyAppearance:(id)arg1;
+- (id)pk_childrenForAppearance;
 
 @end

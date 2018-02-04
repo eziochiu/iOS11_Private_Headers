@@ -471,6 +471,8 @@
 @property (getter=_wasEditing, nonatomic, readonly) bool wasEditing;
 @property (getter=_wrapperView, nonatomic, readonly) UIScrollView *wrapperView;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (id)_externalTableBackgroundColor;
 + (id)_externalTableSeparatorColor;
 + (void)_initializeForIdiom:(long long)arg1;
@@ -1382,5 +1384,34 @@
 - (bool)usesVariableMargins;
 - (id)visibleCells;
 - (void)willMoveToSuperview:(id)arg1;
+
+// Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
+
+- (void)_cnui_adjustCollectiveContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)_cnui_applyContactStyle;
+- (void)_cnui_applyContactStyleStark;
+
+// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+
+- (id)_mapkit_dequeueReusableCellWithIdentifier:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
+
+- (struct CGSize { double x1; double x2; })__ck_contentSize;
+- (id)__ck_indexPathForLastRow;
+
+// Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
+
+- (void)pk_applyAppearance:(id)arg1;
+- (id)pk_childrenForAppearance;
+
+// Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
+
+- (id)pl_indexPathForLastRow;
+- (bool)pl_lastRowIsVisible;
+- (void)pl_resetContentOffsetFromContentInsets;
+- (void)pl_scrollToBottom:(bool)arg1;
+- (void)pl_scrollToTop:(bool)arg1;
+- (void)pl_scrollToVisibleRowAtIndexPath:(id)arg1 animated:(bool)arg2;
 
 @end

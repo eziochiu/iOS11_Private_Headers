@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UISplitViewController : UIViewController {
+@interface UISplitViewController : UIViewController <GKContentRefresh, GKURLHandling> {
     <UISplitViewControllerImpl> * _impl;
 }
 
@@ -10,10 +10,13 @@
 @property (getter=isCollapsed, nonatomic, readonly) bool collapsed;
 @property (nonatomic, copy) UISlidingBarConfiguration *configuration;
 @property (nonatomic, readonly) UISlidingBarState *currentState;
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <UISplitViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) long long displayMode;
 @property (nonatomic, readonly) UIBarButtonItem *displayModeButtonItem;
 @property (nonatomic) float gutterWidth;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) bool hidesMasterViewInPortrait;
 @property (nonatomic, retain) UIViewController *leadingViewController;
 @property (nonatomic, retain) UIViewController *mainViewController;
@@ -27,8 +30,11 @@
 @property (nonatomic, readonly) double primaryColumnWidth;
 @property (nonatomic) long long primaryEdge;
 @property (nonatomic, copy) UISlidingBarStateRequest *stateRequest;
+@property (readonly) Class superclass;
 @property (nonatomic, retain) UIViewController *trailingViewController;
 @property (nonatomic, copy) NSArray *viewControllers;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (bool)doesOverridePreferredInterfaceOrientationForPresentation;
 + (bool)doesOverrideSupportedInterfaceOrientations;
@@ -155,5 +161,13 @@
 - (void)willAnimateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (void)willRotateToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
+
+- (void)_gkForceNextContentUpdate;
+- (void)_gkHandleURLPathComponents:(id)arg1 query:(id)arg2;
+- (void)_gkResetContents;
+- (void)_gkSetContentsNeedUpdateWithHandler:(id /* block */)arg1;
+- (void)_gkUpdateContentsWithCompletionHandlerAndError:(id /* block */)arg1;
 
 @end

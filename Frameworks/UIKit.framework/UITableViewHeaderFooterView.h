@@ -66,6 +66,8 @@
 @property (nonatomic, readonly) UILabel *textLabel;
 @property (getter=_isTopHeader, setter=_setTopHeader:, nonatomic) bool topHeader;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (id)_defaultFontForHeaderFooterView:(id)arg1;
 + (id)_defaultFontForTableViewStyle:(long long)arg1 isSectionHeader:(bool)arg2;
 + (id)_defaultPlainHeaderFooterFont;
@@ -158,5 +160,9 @@
 - (id)text;
 - (long long)textAlignment;
 - (id)textLabel;
+
+// Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
+
+- (void)_cnui_applyContactStyle;
 
 @end

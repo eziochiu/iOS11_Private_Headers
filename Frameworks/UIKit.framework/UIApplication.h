@@ -157,6 +157,7 @@
 @property (setter=__setQueuedOrientationChange:, nonatomic, copy) id /* block */ __queuedOrientationChange;
 @property (setter=_setApplicationActivatedAtLeastOnce:, nonatomic) bool _applicationActivatedAtLeastOnce;
 @property (setter=_setExpectedViewOrientation:, nonatomic) long long _expectedViewOrientation;
+@property (nonatomic, retain) NSDate *accessibilityLastGesturedTextInputStatusChange;
 @property (nonatomic, readonly) NSString *alternateIconName;
 @property (nonatomic) long long applicationIconBadgeNumber;
 @property (nonatomic, readonly) long long applicationState;
@@ -183,6 +184,7 @@
 @property (nonatomic, readonly) long long statusBarStyle;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) bool supportsAlternateIcons;
+@property (nonatomic, readonly) UIViewController *topmostViewController;
 @property (nonatomic, readonly) long long userInterfaceLayoutDirection;
 @property (nonatomic, readonly) NSArray *windows;
 
@@ -969,6 +971,103 @@
 - (void)workspaceNoteAssertionExpirationImminent:(id)arg1;
 - (void)workspaceShouldExit:(id)arg1;
 - (void)workspaceShouldExit:(id)arg1 withTransitionContext:(id)arg2;
+
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
++ (id)_pu_debugSearchViewController:(id)arg1 usingBlock:(id /* block */)arg2;
++ (id)_pu_debugSearchViewControllerHierarchyUsingBlock:(id /* block */)arg1;
++ (id)pu_debugCurrentAsset;
++ (id)pu_debugCurrentViewModel;
++ (id)pu_firstViewControllerPassingTest:(id /* block */)arg1;
+
+- (id)ppt_testDefinitions;
+- (id)pu_beginDisablingIdleTimer;
+- (void)pu_endDisablingIdleTimer:(id)arg1;
+- (void)pu_finishedAnimationSubTest:(id)arg1 forTest:(id)arg2;
+- (void)pu_startedAnimationSubTest:(id)arg1 forTest:(id)arg2;
+
+// Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
+
+- (void)_sf_openTelURL:(id)arg1 completionHandler:(id /* block */)arg2;
+
+// Image: /System/Library/Frameworks/Social.framework/Social
+
++ (void)shouldShowNetworkActivityIndicatorInRemoteApplication:(bool)arg1;
+
+// Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
+
+- (bool)_gkSendAction:(SEL)arg1 viaResponder:(id)arg2 withObject:(id)arg3;
+- (id)_gkTargetForAction:(SEL)arg1 viaResponder:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/Memories.framework/Memories
+
++ (id)konaDelegate;
++ (id)localizedString:(id)arg1;
+
+- (bool)isAlertControllerPresenting;
+- (id)topmostViewController;
+
+// Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
+
+- (id)tsu_beginIgnoringInteractionEvents;
+- (void)tsu_endIgnoringInteractionEventsWithToken:(id)arg1;
+- (id)tsu_ignoreUserInteractionEventsInfo;
+- (id)tsu_newWrapperBeginningIgnoringInteractionEventsSafely;
+- (void)tsu_temporarilyEndIgnoringInteractionEventsForToken:(id)arg1 usingBlock:(id /* block */)arg2;
+
+// Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
+
+- (void)pkui_resetSharedRootAuthenticationContext;
+
+// Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
+
+- (void)_setDelaySuspend:(id)arg1;
+- (void)setDelaySuspend:(bool)arg1;
+
+// Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
+
+- (void)px_navigateToMomentsViewRevealingAsset:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)px_navigateToOneUpShowingAsset:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)px_navigateToRevealDroppedAsset:(id)arg1 completionHandler:(id /* block */)arg2;
+
+// Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
+
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })siriui_applicationFrame;
+
+// Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
+
+- (bool)SKUI_isFullscreen;
+- (bool)SKUI_isMedusaActive;
+
+// Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
+
+- (void)_accessibilityAddKeyboardWindowToArray:(id)arg1 forModalWindow:(id)arg2;
+- (id)_accessibilityElementWindowsWithOptions:(id)arg1 referenceWindow:(id)arg2;
+- (void)_accessibilityEnumerateSiblingsWithParent:(id*)arg1 options:(id)arg2 usingBlock:(id /* block */)arg3;
+- (bool)_accessibilityIsAppReadyToBeProbed;
+- (bool)_accessibilityIsSystemAppServer;
+- (bool)_accessibilitySystemAppServerIsReady;
+- (id)_accessibilityViewChildrenWithOptions:(id)arg1;
+- (id)_accessibilityViewChildrenWithOptions:(id)arg1 referenceWindow:(id)arg2;
+- (id)accessibilityLastGesturedTextInputStatusChange;
+- (id)accessibilityPresentingViewController;
+- (void)setAccessibilityLastGesturedTextInputStatusChange:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
+
++ (double)rc_animationDragCoefficient;
++ (id)rc_beginTemporaryInteractionEventIgnoringWithTimeout:(double)arg1 sessionWillEndHandler:(id /* block */)arg2;
++ (void)rc_endTemporaryInteractionEventIgnoringForToken:(id)arg1;
++ (bool)rc_isRunningInStoreDemoMode;
++ (bool)rc_shouldMakeUIForDefaultPNG;
+
+- (void)rc_createDefaultPNG;
+- (id)rc_rootViewController;
+
+// Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
+
+- (void)beginPPTWithName:(id)arg1;
+- (void)endCurrentPPT;
 
 // Image: /bootstrap/Library/SBInject/Eclipse.dylib
 

@@ -80,6 +80,8 @@
 @property (nonatomic) long long titleLineBreakMode;
 @property (nonatomic) long long titleTextAlignment;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (id)_backgroundImage;
 + (id)_bottomAnchorImage;
 + (id)_leftCapImage;
@@ -149,5 +151,9 @@
 - (id)title;
 - (long long)titleLineBreakMode;
 - (long long)titleTextAlignment;
+
+// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+
+- (bool)isExpanded;
 
 @end

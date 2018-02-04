@@ -12,7 +12,13 @@
 
 @property (nonatomic, readonly) NSArray *accounts;
 @property (readonly) NSString *effectiveBundleID;
+@property (setter=ic_setActiveLockerAccount:, nonatomic, retain) ACAccount *ic_activeLockerAccount;
+@property (setter=ic_setActiveStoreAccount:, nonatomic, retain) ACAccount *ic_activeStoreAccount;
+@property (nonatomic, readonly, copy) NSArray *ic_allStoreAccounts;
+@property (nonatomic, readonly) ACAccount *ic_primaryAppleAccount;
 @property (nonatomic, retain) ACRemoteAccountStoreSession *remoteAccountStoreSession;
+
+// Image: /System/Library/Frameworks/Accounts.framework/Accounts
 
 + (int)accountsWithAccountTypeIdentifierExist:(id)arg1;
 + (bool)canSaveAccountsOfAccountTypeIdentifier:(id)arg1;
@@ -130,5 +136,101 @@
 - (void)verifyCredentialsForAccount:(id)arg1 saveWhenAuthorized:(bool)arg2 withHandler:(id /* block */)arg3;
 - (void)verifyCredentialsForAccount:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)visibleTopLevelAccountsWithAccountTypeIdentifiers:(id)arg1 completion:(id /* block */)arg2;
+
+// Image: /System/Library/Frameworks/Social.framework/Social
+
++ (bool)SLDuplicateAccountExistsForAccount:(id)arg1 withTypeIdentifier:(id)arg2 andAccountPropertyIDKey:(id)arg3;
+
+- (void)sl_openGoogleAuthenticationSheetForAccount:(id)arg1 shouldConfirm:(bool)arg2 completion:(id /* block */)arg3;
+- (void)sl_openGoogleAuthenticationSheetForAccount:(id)arg1 shouldConfirm:(bool)arg2 delegateClassName:(id)arg3 completion:(id /* block */)arg4;
+- (void)sl_openGoogleAuthenticationSheetWithAccountDescription:(id)arg1 completion:(id /* block */)arg2;
+- (void)sl_openYouTubeAuthenticationSheetWithAccountDescription:(id)arg1 completion:(id /* block */)arg2;
+- (void)sl_openYouTubeAuthenticationSheetWithUsername:(id)arg1 accountDescription:(id)arg2 completion:(id /* block */)arg3;
+
+// Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
+
+- (void)_performUpdateRequestWithAccount:(id)arg1 completion:(id /* block */)arg2;
+- (id)aa_accountsEnabledForDataclass:(id)arg1;
+- (id)aa_appleAccountType;
+- (id)aa_appleAccountWithAltDSID:(id)arg1;
+- (id)aa_appleAccountWithPersonID:(id)arg1;
+- (id)aa_appleAccountWithUsername:(id)arg1;
+- (id)aa_appleAccounts;
+- (void)aa_appleAccountsWithCompletion:(id /* block */)arg1;
+- (id)aa_authKitAccountForAltDSID:(id)arg1;
+- (id)aa_grandSlamAccountForAltDSID:(id)arg1;
+- (id)aa_grandSlamAccountForiCloudAccount:(id)arg1;
+- (bool)aa_isUsingiCloud;
+- (void)aa_lookupEmailAddresses:(id)arg1 withAppleAccount:(id)arg2 completion:(id /* block */)arg3;
+- (id)aa_primaryAppleAccount;
+- (void)aa_primaryAppleAccountWithCompletion:(id /* block */)arg1;
+- (id)aa_primaryAppleAccountWithPreloadedDataclasses;
+- (id)aa_recommendedAppleIDForAccountSignInWithTypeIdentifier:(id)arg1;
+- (void)aa_registerAppleAccount:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)aa_registerAppleAccountWithHSA:(id)arg1 completion:(id /* block */)arg2;
+- (void)aa_registerAppleAccountWithHSA:(id)arg1 usingCookieHeaders:(id)arg2 completion:(id /* block */)arg3;
+- (void)aa_updatePropertiesForAppleAccount:(id)arg1 completion:(id /* block */)arg2;
+- (void)aa_updatePropertiesForAppleAccount:(id)arg1 options:(id)arg2 completion:(id /* block */)arg3;
+- (id)accountWithAppleID:(id)arg1;
+- (id)accountsWithAccountType:(id)arg1 appleID:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/AppleIDSSOAuthentication.framework/AppleIDSSOAuthentication
+
+- (id)_primaryiCloudAccount;
+- (id)aida_AppleIDAuthenticationAccountType;
+- (id)aida_AppleIDAuthenticationAccounts;
+- (id)aida_accountForPrimaryiCloudAccount;
+- (id)aida_accountForiCloudAccount:(id)arg1;
+- (id)aida_iCloudAccountMatchingAppleIDAuthAccount:(id)arg1;
+- (void)aida_renewCredentialsForAccount:(id)arg1 services:(id)arg2 completion:(id /* block */)arg3;
+- (void)aida_renewCredentialsForAccount:(id)arg1 services:(id)arg2 force:(bool)arg3 completion:(id /* block */)arg4;
+
+// Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
+
+- (id)br_appleAccountWithPersonID:(id)arg1;
+- (id)br_primaryAppleAccount;
+
+// Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
+
+- (void)_daAccountsWithAccountTypeIdentifiers:(id)arg1 enabledForDADataclasses:(long long)arg2 filterOnDataclasses:(bool)arg3 withCompletion:(id /* block */)arg4;
+- (id)da_accounts;
+- (id)da_accountsEnabledForDADataclasses:(long long)arg1;
+- (id)da_accountsWithAccountTypeIdentifiers:(id)arg1;
+- (id)da_accountsWithAccountTypeIdentifiers:(id)arg1 enabledForDADataclasses:(long long)arg2;
+- (void)da_loadDAAccountsEnabledForDADataclasses:(long long)arg1 withCompletion:(id /* block */)arg2;
+- (void)da_loadDAAccountsWithAccountTypeIdentifiers:(id)arg1 enabledForDADataclasses:(long long)arg2 withCompletion:(id /* block */)arg3;
+- (void)da_loadDAAccountsWithAccountTypeIdentifiers:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)da_loadDAAccountsWithCompletion:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
+
+- (id)_gkAccountForAppleID:(id)arg1;
+- (id)_gkAllCredentials;
+- (id)_gkAllCredentialsForEnvironment:(long long)arg1;
+- (id)_gkCredentialForUsername:(id)arg1 environment:(long long)arg2;
+- (void)_gkDeleteCredential:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)_gkMapAccountsWithBlock:(id /* block */)arg1;
+- (id)_gkPrimaryCredentialForEnvironment:(long long)arg1;
+- (void)_gkSaveCredential:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_gkSetScope:(unsigned int)arg1 forCredential:(id)arg2 completionHandler:(id /* block */)arg3;
+
+// Image: /System/Library/PrivateFrameworks/MobileSync.framework/MobileSync
+
+- (id)_mailAccountTypeIdentifiers;
+- (bool)hasMailAccountsForSync;
+- (id)mailAccountsForSync;
+
+// Image: /System/Library/PrivateFrameworks/iTunesCloud.framework/iTunesCloud
+
++ (id)ic_sharedAccountStore;
+
+- (id)_ic_storeAccountType;
+- (id)ic_activeLockerAccount;
+- (id)ic_activeStoreAccount;
+- (id)ic_allStoreAccounts;
+- (id)ic_primaryAppleAccount;
+- (void)ic_setActiveLockerAccount:(id)arg1;
+- (void)ic_setActiveStoreAccount:(id)arg1;
+- (id)ic_storeAccountForStoreAccountID:(id)arg1;
 
 @end

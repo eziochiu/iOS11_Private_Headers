@@ -57,6 +57,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic) struct UIOffset { double x1; double x2; } titlePositionAdjustment;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (id)_appearanceBlindViewClasses;
 
 - (void).cxx_destruct;
@@ -144,5 +146,9 @@
 - (id)titleTextAttributesForState:(unsigned long long)arg1;
 - (id)unselectedImage;
 - (id)view;
+
+// Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
+
+- (void)setBadgeValue:(id)arg1 animated:(bool)arg2 blink:(bool)arg3;
 
 @end

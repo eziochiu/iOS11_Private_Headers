@@ -116,6 +116,8 @@
 @property (getter=_fromWindowOrientation, setter=_setFromWindowOrientation:, nonatomic) long long fromWindowOrientation;
 @property (readonly) unsigned long long hash;
 @property (getter=isKeyWindow, nonatomic, readonly) bool keyWindow;
+@property (nonatomic, readonly) PXContextualNotificationCenter *px_contextualNotificationCenter;
+@property (nonatomic, readonly) PXImageModulationManager *px_imageModulationManager;
 @property (getter=_rememberedFocusedItem, setter=_setRememberedFocusedItem:, nonatomic) <UIFocusItem> *rememberedFocusedItem;
 @property (nonatomic, retain) UIViewController *rootViewController;
 @property (nonatomic, retain) UIScreen *screen;
@@ -123,6 +125,8 @@
 @property (getter=_supportsFocus, nonatomic, readonly) bool supportsFocus;
 @property (getter=_toWindowOrientation, setter=_setToWindowOrientation:, nonatomic) long long toWindowOrientation;
 @property (nonatomic) double windowLevel;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (void)__popKeyWindow:(id)arg1 findNewKeyWindowIfStackEmpty:(bool)arg2;
 + (bool)_allWindowsKeepContextInBackground;
@@ -588,5 +592,34 @@
 - (struct CGPoint { double x1; double x2; })warpPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (double)windowLevel;
 - (int)windowOutput;
+
+// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
+
++ (void)music_setWantsDefaultLayoutInsets;
++ (void)music_setWantsLayoutInsetsUsingBlock:(id /* block */)arg1;
++ (void)music_setWantsMusicLayoutInsets;
+
+// Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
+
+- (void)pl_presentViewController:(id)arg1 animated:(bool)arg2;
+
+// Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
+
+- (id)px_contextualNotificationCenter;
+- (id)px_imageModulationManager;
+
+// Image: /System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI
+
+- (id)sbui_effectiveWindowForIsolation;
+
+// Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
+
+- (bool)_accessibilityIsModalWithKeyboard;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_axConvertRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 toWindow:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
+
+- (id)addTouchCaptureViewWithTag:(long long)arg1;
+- (id)removeTouchCaptureViewWithTag:(long long)arg1;
 
 @end

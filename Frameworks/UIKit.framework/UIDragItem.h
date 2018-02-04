@@ -21,6 +21,8 @@
 @property (setter=_setDraggedTextRange:, nonatomic, retain) UITextRange *_draggedTextRange;
 @property (getter=_draggingItem, setter=_setDraggingItem:, nonatomic, retain) _UIDraggingItem *_draggingItem;
 @property (nonatomic) unsigned long long _managementState;
+@property (nonatomic, readonly) WebBookmark *_sf_localBookmark;
+@property (nonatomic, readonly) NSURL *_sf_localURL;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } _visibleDropItemSize;
 @property (getter=_duiPreviewProvider, nonatomic, readonly) id /* block */ duiPreviewProvider;
 @property (nonatomic, readonly) id /* block */ imageComponentsProvider;
@@ -32,6 +34,8 @@
 @property (nonatomic, copy) id /* block */ previewProvider;
 @property (getter=_privateLocalContext, setter=_setPrivateLocalContext:, nonatomic, retain) id privateLocalContext;
 @property (getter=_targetedLiftPreview, setter=_setTargetedLiftPreview:, nonatomic, retain) UITargetedDragPreview *targetedLiftPreview;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 - (void).cxx_destruct;
 - (void)_didSetPreferredPreviewProvider;
@@ -63,5 +67,13 @@
 - (void)setLocalObject:(id)arg1;
 - (void)setPreviewProvider:(id /* block */)arg1;
 - (void)set_managementState:(unsigned long long)arg1;
+
+// Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
+
++ (void)_sf_loadObjectsFromDragItems:(id)arg1 usingLocalObjectLoader:(int (*)arg2 objectLoader:(int (*)arg3 completionHandler:(id /* block */)arg4;
+
+- (id)_sf_initWithBookmark:(id)arg1;
+- (id)_sf_localBookmark;
+- (id)_sf_localURL;
 
 @end

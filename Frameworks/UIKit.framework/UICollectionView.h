@@ -269,6 +269,7 @@
 @property (nonatomic, readonly) long long numberOfSections;
 @property (nonatomic) <UICollectionViewDataSourcePrefetching> *prefetchDataSource;
 @property (getter=isPrefetchingEnabled, nonatomic) bool prefetchingEnabled;
+@property (nonatomic, readonly) NSArray *pu_indexPathsForPreparedItems;
 @property (nonatomic) bool remembersLastFocusedIndexPath;
 @property (getter=_reorderedItems, nonatomic, readonly) NSArray *reorderedItems;
 @property (nonatomic) long long reorderingCadence;
@@ -276,6 +277,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSArray *visibleCells;
 @property (getter=_visibleViews, nonatomic, readonly) NSArray *visibleViews;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)_reuseKeyForSupplementaryViewOfKind:(id)arg1 withReuseIdentifier:(id)arg2;
 
@@ -723,5 +726,48 @@
 - (void)updateInteractiveMovementTargetPosition:(struct CGPoint { double x1; double x2; })arg1;
 - (id)visibleCells;
 - (id)visibleSupplementaryViewsOfKind:(id)arg1;
+
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
+- (id)next:(long long)arg1 indexPathFromIndexPath:(id)arg2;
+- (id)pu_indexPathsForPreparedItems;
+- (id)pu_preparedCellForItemAtIndexPath:(id)arg1;
+- (void)pu_scrollToItemAtIndexPath:(id)arg1 atScrollPosition:(unsigned long long)arg2 animated:(bool)arg3;
+- (void)pu_scrollToRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 atScrollPosition:(unsigned long long)arg2 animated:(bool)arg3;
+
+// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
+
+- (struct CGSize { double x1; double x2; })__ck_contentSize;
+- (id)__ck_indexPathForLastItem;
+- (id)__ck_indexPathForReplyItem;
+- (bool)__ck_isScrolledToBottomHidingIndexPath:(id)arg1;
+- (void)__ck_reloadDataKeepingSelection;
+- (struct CGPoint { double x1; double x2; })__ck_scrollToBottomContentOffsetHidingIndexPath:(id)arg1;
+- (void)__ck_scrollToTopOfCellAtIndexPath:(id)arg1 hidingCellAtIndexPath:(id)arg2 animated:(bool)arg3;
+- (id)ckIndexPathsForElementsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+
+// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
+
+- (void)music_inheritedLayoutInsetsDidChange;
+
+// Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
+
+- (id)_gkDequeueCellForClass:(Class)arg1 forIndexPath:(id)arg2;
+- (id)_gkDequeueSupplementaryViewForClass:(Class)arg1 ofKind:(id)arg2 forIndexPath:(id)arg3;
+- (void)_gkPerformWithoutViewReuse:(id /* block */)arg1;
+- (void)_gkRegisterCellClass:(Class)arg1;
+- (void)_gkRegisterClass:(Class)arg1 forSupplementaryViewOfKind:(id)arg2;
+- (void)_gkRegisterNib:(id)arg1 forCellClass:(Class)arg2;
+- (id)_gkReuseIdentifierForClass:(Class)arg1;
+- (id)_gkVisibleCellForIndexPath:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
+
+- (void)hk_scrollToItemRespectingFlowLayoutSectionInsetAtIndexPath:(id)arg1 animated:(bool)arg2 scrollPosition:(unsigned long long)arg3;
+
+// Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
+
+- (bool)tv_isFocusOnNonOwnedCell;
+- (struct CGSize { double x1; double x2; })tv_sizeThatFits:(struct CGSize { double x1; double x2; })arg1 withContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
 
 @end

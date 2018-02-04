@@ -59,6 +59,8 @@
 @property (nonatomic) double videoMaximumDuration;
 @property (nonatomic) long long videoQuality;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (bool)_isMediaTypeAvailable:(id)arg1 forSource:(long long)arg2;
 + (bool)_reviewCapturedItems;
 + (id)availableCaptureModesForCameraDevice:(long long)arg1;
@@ -182,5 +184,9 @@
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
 - (void)viewWillUnload;
+
+// Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
+
++ (id)aaui_fixedCropRect:(id)arg1 forOriginalImage:(id)arg2;
 
 @end

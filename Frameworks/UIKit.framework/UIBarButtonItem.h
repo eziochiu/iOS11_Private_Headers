@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIBarButtonItem : UIBarItem <NSCoding, UISpringLoadedInteractionSupporting> {
+@interface UIBarButtonItem : UIBarItem <MFPopoverPresentationSource, NSCoding, UISpringLoadedInteractionSupporting> {
     id /* block */  __autoValidationHandler;
     NSArray * __backButtonAlternateTitles;
     bool  __hidden;
@@ -84,6 +84,7 @@
 @property (setter=_setOwningNavigationItem:, nonatomic) UINavigationItem *_owningNavigationItem;
 @property (setter=_setPopoverLayoutGuide:, nonatomic, retain) UILayoutGuide *_popoverLayoutGuide;
 @property (setter=_setPossibleItemVariations:, nonatomic, copy) NSSet *_possibleItemVariations;
+@property (setter=_sf_setLongPressEnabled:, nonatomic) bool _sf_longPressEnabled;
 @property (setter=_setShowsBackButtonIndicator:, nonatomic) bool _showsBackButtonIndicator;
 @property (setter=_setStylesForSizingTitles:, nonatomic, copy) NSDictionary *_stylesForSizingTitles;
 @property (nonatomic, readonly) UIToolbarButton *_toolbarButton;
@@ -275,8 +276,45 @@
 - (double)width;
 - (id)window;
 
+// Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
+
+- (void)mf_setAsSourceForPopoverPresentationController:(id)arg1;
+- (void)mf_setImageOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)mf_setImageVerticalOffset:(double)arg1;
+- (void)mf_setLandscapeImagePhoneOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)mf_setLandscapeImagePhoneVerticalOffset:(double)arg1;
+
+// Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
+
++ (double)_sf_longPressAllowableMovement;
+
+- (bool)_sf_longPressEnabled;
+- (void)_sf_setLongPressEnabled:(bool)arg1;
+- (void)_sf_setLongPressTarget:(id)arg1 action:(SEL)arg2;
+
 // Image: /System/Library/Frameworks/UIKit.framework/Frameworks/DocumentManager.framework/DocumentManager
 
 - (bool)_doc_isMatchingUUID:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
+
++ (id)_ckBarButtonItemWithTitle:(id)arg1 style:(long long)arg2;
++ (id)ckCancelBarButtonItem;
++ (id)ckDoneBarButtonItem;
++ (id)ckEditBarButtonItem;
++ (id)ckEditDoneButtonPossibleItemVariations;
+
+// Image: /System/Library/PrivateFrameworks/NewsUI.framework/NewsUI
+
+- (id)nu_view;
+
+// Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
+
++ (id)telephonyUI_fixedSpaceBarButtonItem;
++ (id)telephonyUI_flexibleSpaceBarButtonItem;
+
+// Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
+
+- (void)configureFromScriptButton:(id)arg1;
 
 @end

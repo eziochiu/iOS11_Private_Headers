@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UITextView : UIScrollView <UIContentSizeCategoryAdjusting, UIKeyboardInput, UIPreviewItemDelegate, UITextAutoscrolling, UITextDragSupporting, UITextDraggable, UITextDropSupporting, UITextDroppable, UITextInput, UITextInputControllerDelegate, UITextInputTraits_Private, UITextLinkInteraction, UITextPasteConfigurationSupporting, UITextPasteConfigurationSupporting_Internal, UIViewGhostedRangeSupporting, _UILayoutBaselineUpdating, _UIMultilineTextContentSizing, _UITextContainerViewDelegate, _UITextViewContentPaddingDelegate, _UIViewBaselineSpacing> {
+@interface UITextView : UIScrollView <ABText, MPUAutoupdatingTextContainer, UIContentSizeCategoryAdjusting, UIKeyboardInput, UIPreviewItemDelegate, UITextAutoscrolling, UITextDragSupporting, UITextDraggable, UITextDropSupporting, UITextDroppable, UITextInput, UITextInputControllerDelegate, UITextInputTraits_Private, UITextLinkInteraction, UITextPasteConfigurationSupporting, UITextPasteConfigurationSupporting_Internal, UIViewGhostedRangeSupporting, _UILayoutBaselineUpdating, _UIMultilineTextContentSizing, _UITextContainerViewDelegate, _UITextViewContentPaddingDelegate, _UIViewBaselineSpacing> {
     bool  _adjustsFontForContentSizeCategory;
     bool  _animatingPaste;
     UIAutoscroll * _autoscroll;
@@ -95,8 +95,12 @@
     _UITextViewVisualStyle * _visualStyle;
 }
 
+@property (setter=MPU_setAutomaticallyUpdatesTextStyleFontsToPreferredTextStyleFonts:, nonatomic) bool MPU_automaticallyUpdatesTextStyleFontsToPreferredTextStyleFonts;
+@property (nonatomic, readonly) MPUTextContainerContentSizeUpdater *MPU_contentSizeUpdater;
 @property (nonatomic, copy) NSIndexSet *PINEntrySeparatorIndexes;
 @property (setter=_setDrawsDebugBaselines:, nonatomic) bool _drawsDebugBaselines;
+@property (nonatomic, copy) NSString *ab_text;
+@property (nonatomic, copy) NSDictionary *ab_textAttributes;
 @property (nonatomic) bool acceptsDictationSearchResults;
 @property (nonatomic) bool acceptsEmoji;
 @property (nonatomic) bool acceptsFloatingKeyboard;
@@ -104,6 +108,7 @@
 @property (nonatomic) bool acceptsSplitKeyboard;
 @property (nonatomic) bool adjustsFontForContentSizeCategory;
 @property (nonatomic) bool allowsEditingTextAttributes;
+@property (nonatomic, copy) NSAttributedString *attributedText;
 @property (copy) NSAttributedString *attributedText;
 @property (nonatomic) long long autocapitalizationType;
 @property (nonatomic, copy) NSString *autocorrectionContext;
@@ -122,11 +127,13 @@
 @property (nonatomic) bool disablePrediction;
 @property (nonatomic) bool displaySecureEditsUsingPlainText;
 @property (nonatomic) bool displaySecureTextUsingPlainText;
+@property (nonatomic) <UITextViewDrawingDelegate> *drawingDelegate;
 @property (getter=isEditable, nonatomic) bool editable;
 @property (nonatomic) int emptyContentReturnKeyType;
 @property (nonatomic) bool enablesReturnKeyAutomatically;
 @property (nonatomic) bool enablesReturnKeyOnNonWhiteSpaceContent;
 @property (nonatomic, readonly) UITextPosition *endOfDocument;
+@property (getter=isFingerDrawingEnabled, nonatomic) bool fingerDrawingEnabled;
 @property (nonatomic, retain) UIFont *font;
 @property (nonatomic) bool forceDefaultDictationInfo;
 @property (nonatomic) long long forceDictationKeyboardType;
@@ -135,6 +142,7 @@
 @property (nonatomic) bool hasDefaultContents;
 @property (nonatomic, readonly) bool hasText;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, copy) PKInk *ink;
 @property (retain) UIView *inputAccessoryView;
 @property (nonatomic, retain) UIInputContextHistory *inputContextHistory;
 @property (nonatomic) <UITextInputDelegate> *inputDelegate;
@@ -148,6 +156,7 @@
 @property (nonatomic) long long keyboardType;
 @property (nonatomic, readonly) NSLayoutManager *layoutManager;
 @property (nonatomic) bool learnsCorrections;
+@property (nonatomic, copy) PKLinedPaper *linedPaper;
 @property (nonatomic, copy) NSDictionary *linkTextAttributes;
 @property (nonatomic) bool loadKeyboardsForSiriLanguage;
 @property (nonatomic, readonly) UITextRange *markedTextRange;
@@ -171,6 +180,7 @@
 @property (nonatomic) long long smartInsertDeleteType;
 @property (nonatomic) long long smartQuotesType;
 @property (nonatomic) long long spellCheckingType;
+@property (getter=isStylusDrawingEnabled, nonatomic) bool stylusDrawingEnabled;
 @property (readonly) Class superclass;
 @property (nonatomic) bool suppressReturnKeyStyling;
 @property (nonatomic, copy) NSString *text;
@@ -201,6 +211,8 @@
 @property (nonatomic) bool useInterfaceLanguageForLocalization;
 @property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } validTextRange;
 @property (nonatomic, retain) _UITextViewVisualStyle *visualStyle;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (bool)_isCompatibilityTextView;
 + (void)_removeHighlight;
@@ -589,5 +601,83 @@
 - (id)visualStyle;
 - (id)webView;
 - (bool)willInteractWithLinkAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+
+// Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
+
+- (void)_cnui_applyContactStyle;
+- (id)ab_text;
+- (id)ab_textAttributes;
+- (void)setAb_text:(id)arg1;
+- (void)setAb_textAttributes:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AppSupportUI.framework/AppSupportUI
+
+- (bool)isLayoutSizeDependentOnPerpendicularAxis;
+- (bool)supportsAsynchronousMeasurement;
+
+// Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
+
+- (bool)dd_ignoreSignatures;
+- (id)dd_newOperation;
+
+// Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
+
+- (bool)MPU_automaticallyUpdatesTextStyleFontsToPreferredTextStyleFonts;
+- (id)MPU_contentSizeUpdater;
+- (void)MPU_setAutomaticallyUpdatesTextStyleFontsToPreferredTextStyleFonts:(bool)arg1;
+
+// Image: /System/Library/PrivateFrameworks/MaterialKit.framework/MaterialKit
+
+- (void)mt_applyVibrantStyling:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NotesUI.framework/NotesUI
+
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })ic_characterRangeFromTextPosition:(id)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })ic_characterRangeFromTextRange:(id)arg1;
+- (id)ic_textRangeFromCharacterRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)scrollRangeToTop:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)scrollRangeToVisible:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 consideringInsets:(bool)arg2 animated:(bool)arg3;
+- (id)selectedRanges;
+- (void)setSelectedRanges:(id)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })visibleRange;
+
+// Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
+
++ (id)pkui_plainInteractiveTextViewWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
++ (id)pkui_plainNonInteractiveTextViewWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
++ (void)pkui_styleTextView:(id)arg1;
+
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })pkui_frameForTextFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })pkui_textFrame;
+- (struct CGSize { double x1; double x2; })pkui_textSizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+
+// Image: /System/Library/PrivateFrameworks/PencilKit.framework/PencilKit
+
+- (bool)_canAddDrawing;
+- (bool)_canAddStroke;
+- (bool)_canInsertDrawing;
+- (bool)_canInsertDrawingInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)_clearDrawingInfo;
+- (void)_didEndStroke;
+- (id)_drawingInfo;
+- (void)_growView:(id)arg1 textAttachment:(id)arg2 atCharacterIndex:(long long)arg3 step:(double)arg4 stop:(id /* block */)arg5;
+- (void)_insertDrawing:(id)arg1;
+- (void)_insertDrawingWithTap:(id)arg1;
+- (id)_insertEmptyDrawingAttachmentAtLocation:(long long)arg1;
+- (id)_pkTiledView;
+- (void)_removeDrawingAttachment:(id)arg1 withView:(id)arg2 forDeletion:(bool)arg3;
+- (id)_textRangeFromRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)_undoDrawingBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 viewBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 ofAttachmentUUID:(id)arg3;
+- (void)_willBeginNewStrokeForTouch:(id)arg1;
+- (id)drawingDelegate;
+- (id)ink;
+- (bool)isFingerDrawingEnabled;
+- (bool)isStylusDrawingEnabled;
+- (id)linedPaper;
+- (void)setDrawingDelegate:(id)arg1;
+- (void)setFingerDrawingEnabled:(bool)arg1;
+- (void)setInk:(id)arg1;
+- (void)setLinedPaper:(id)arg1;
+- (void)setStylusDrawingEnabled:(bool)arg1;
 
 @end

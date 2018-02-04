@@ -212,4 +212,24 @@
 - (id)initWithImage:(id)arg1;
 - (id)initWithImage:(id)arg1 options:(id)arg2;
 
+// Image: /System/Library/PrivateFrameworks/AXMediaUtilities.framework/AXMediaUtilities
+
+- (long long)_imageOrientationForInterfaceOrientation:(long long)arg1 displayOrientation:(long long)arg2;
+- (long long)_imageOrientationForInterfaceOrientation:(long long)arg1 isMirrored:(bool)arg2;
+- (id)rotatedImageWithInterfaceOrientation:(long long)arg1 displayOrientation:(long long)arg2 appliedImageOrientation:(long long*)arg3;
+- (id)rotatedImageWithInterfaceOrientation:(long long)arg1 isMirrored:(bool)arg2 appliedImageOrientation:(long long*)arg3;
+- (void)saveToURL:(id)arg1 withOrientation:(long long)arg2;
+- (void)writeImageInAllOrientationsToDirectoryAtURL:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/BarcodeSupport.framework/BarcodeSupport
+
+- (id)_bcs_stringValueIfQRCode;
+
+// Image: /System/Library/PrivateFrameworks/PhotoEditSupport.framework/PhotoEditSupport
+
+- (id)bl_imageFromAlphaChannel;
+- (id)bl_imageToAlphaChannel;
+- (id)bl_moveAlphaToBlue;
+- (id)bl_moveBlueToAlpha;
+
 @end

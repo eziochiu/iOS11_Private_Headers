@@ -25,6 +25,8 @@
 @property <NSKeyedUnarchiverDelegate> *delegate;
 @property bool requiresSecureCoding;
 
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
+
 + (Class)classForClassName:(id)arg1;
 + (void)initialize;
 + (void)setClass:(Class)arg1 forClassName:(id)arg2;
@@ -86,5 +88,76 @@
 - (void)setRequiresSecureCoding:(bool)arg1;
 - (unsigned int)systemVersion;
 - (long long)versionForClassName:(id)arg1;
+
+// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+
++ (id)_mapkit_safeUnarchiveObjectWithData:(id)arg1;
+
+// Image: /System/Library/Frameworks/Messages.framework/Messages
+
++ (id)__ms_unarchiveObjectOfClasses:(id)arg1 data:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/AXMediaUtilities.framework/AXMediaUtilities
+
++ (id)axmSecurelyUnarchiveData:(id)arg1 withExpectedClass:(Class)arg2 otherAllowedClasses:(id)arg3 error:(id*)arg4;
+
+// Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
+
++ (id)secureUnarchiveData:(id)arg1 withExpectedClass:(Class)arg2 otherAllowedClasses:(id)arg3;
+
+// Image: /System/Library/PrivateFrameworks/Catalyst.framework/Catalyst
+
++ (id)cat_unarchiveObjectOfClass:(Class)arg1 withData:(id)arg2;
++ (id)cat_unarchiveObjectOfClasses:(id)arg1 withData:(id)arg2;
++ (id)cat_unarchivePropertyListObjectWithData:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
+
++ (id)cpl_safeUnarchiveObjectWithData:(id)arg1;
++ (id)cpl_safeUnarchiveObjectWithFile:(id)arg1;
+
+- (id)cpl_safeInitForReadingWithData:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
+
++ (id)MSSafeUnarchiveObjectWithData:(id)arg1;
++ (id)MSSafeUnarchiveObjectWithData:(id)arg1 outError:(id*)arg2;
++ (id)MSSafeUnarchiveObjectWithFile:(id)arg1 outError:(id*)arg2;
++ (id)allowedClasses;
+
+// Image: /System/Library/PrivateFrameworks/DigitalTouchShared.framework/DigitalTouchShared
+
++ (id)_et_secureUnarchiveObjectOfClass:(Class)arg1 withData:(id)arg2;
++ (id)_et_secureUnarchiveObjectOfClasses:(id)arg1 withData:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
+
++ (id)deserializeObjectWithData:(id)arg1 allowedClass:(Class)arg2 frameworkClasses:(id)arg3;
++ (id)deserializeObjectWithData:(id)arg1 allowedClasses:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/IDSFoundation.framework/IDSFoundation
+
++ (id)ids_secureUnarchiveObjectOfClass:(Class)arg1 withData:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
+
++ (id)unarchiveObjectOfClass:(Class)arg1 withData:(id)arg2;
++ (id)unarchiveObjectOfClasses:(id)arg1 withData:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/PairedSync.framework/PairedSync
+
++ (id)secureUnarchiveObjectOfClasses:(id)arg1 withData:(id)arg2;
++ (id)secureUnarchiveObjectOfClasses:(id)arg1 withFile:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
+
++ (id)pl_safeUnarchiveObjectWithData:(id)arg1;
++ (id)pl_safeUnarchiveObjectWithFile:(id)arg1;
+
+- (id)pl_safeInitForReadingWithData:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/Swift/libswiftFoundation.dylib
+
++ (int)_swift_checkClassAndWarnForKeyedArchiving:(Class)arg1 operation:(int)arg2;
 
 @end

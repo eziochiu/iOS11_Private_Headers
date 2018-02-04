@@ -118,6 +118,8 @@
 @property (nonatomic, retain) UIView *warpedIntoView;
 @property (nonatomic, retain) UIWindow *window;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (id)_createTouchesWithGSEvent:(struct __GSEvent { }*)arg1 phase:(long long)arg2 view:(id)arg3;
 
 - (void).cxx_destruct;
@@ -234,7 +236,6 @@
 - (void)setInitialTouchTimestamp:(double)arg1;
 - (void)setIsDelayed:(bool)arg1;
 - (void)setIsTap:(bool)arg1;
-- (void)setMajorRadius:(double)arg1;
 - (void)setMajorRadiusTolerance:(double)arg1;
 - (void)setPhase:(long long)arg1;
 - (void)setSentTouchesEnded:(bool)arg1;
@@ -249,5 +250,18 @@
 - (id)view;
 - (id)warpedIntoView;
 - (id)window;
+
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
+- (struct CGPoint { double x1; double x2; })pu_locationInPresentationLayerOfView:(id)arg1;
+
+// Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
+
+- (struct CGPoint { double x1; double x2; })locationInNode:(id)arg1;
+- (struct CGPoint { double x1; double x2; })previousLocationInNode:(id)arg1;
+
+// Image: /bootstrap/Library/SBInject/LittleX.dylib
+
+- (void)setMajorRadius:(double)arg1;
 
 @end

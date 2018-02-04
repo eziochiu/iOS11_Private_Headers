@@ -17,6 +17,8 @@
 @property (nonatomic, readonly) NSString *postscriptName;
 @property (nonatomic, readonly) unsigned int symbolicTraits;
 
+// Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
+
 + (id)_createMungledDictionary:(id)arg1;
 + (id)defaultFontDescriptorWithTextStyle:(id)arg1;
 + (id)defaultFontDescriptorWithTextStyle:(id)arg1 addingSymbolicTraits:(unsigned int)arg2 options:(unsigned long long)arg3;
@@ -53,5 +55,31 @@
 - (double)pointSize;
 - (id)postscriptName;
 - (unsigned int)symbolicTraits;
+
+// Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
+
++ (id)cnui_bodyFontDescriptor;
++ (id)cnui_footnoteFontDescriptor;
+
+// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+
++ (id)_mapkit_fontFeaturesForTabularFigures;
++ (id)_mapkit_fontFeaturesForTimeDisplay;
++ (id)_mapkit_fontFeaturesForTimeDisplayUseMonospace:(bool)arg1;
++ (id)_mapkit_fontMonospaceFeature;
++ (id)_mapkit_fontRoundedColonFeature;
+
+- (id)_mapkit_fontDescriptorByAddingFeaturesForTabularFigures;
+- (id)_mapkit_fontDescriptorByAddingFeaturesForTimeDisplay;
+- (id)_mapkit_fontDescriptorByAddingFeaturesForTimeDisplayUseMonospace:(bool)arg1;
+
+// Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
+
++ (id)telephonyUIBodyShortEmphasizedFontDescriptor;
++ (id)telephonyUIBodyShortFontDescriptor;
++ (id)telephonyUIBodyShortItalicFontDescriptor;
++ (id)telephonyUIFootnoteShortFontDescriptor;
++ (id)telephonyUIPreferredFontDescriptorWithTextStyle:(id)arg1 addingSymbolicTraits:(unsigned int)arg2;
++ (id)telephonyUISubheadlineShortFontDescriptor;
 
 @end

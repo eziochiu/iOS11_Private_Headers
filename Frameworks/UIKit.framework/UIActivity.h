@@ -81,6 +81,15 @@
 - (void)setDidFinishPerformingActivityHandler:(id /* block */)arg1;
 - (void)setIndexInApplicationDefinedActivities:(unsigned long long)arg1;
 
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
++ (id)ph_PhotosApplicationActivitiesTypePublish;
++ (id)ph_PhotosApplicationActivityTypeOrder;
+
+// Image: /System/Library/Frameworks/ReplayKit.framework/ReplayKit
+
++ (void)streamActivitiesWithCompletion:(id /* block */)arg1;
+
 // Image: /bootstrap/Library/SBInject/AnemoneIcons.dylib
 
 - (id)_activityImage;

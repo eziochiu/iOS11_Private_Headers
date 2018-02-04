@@ -10,6 +10,8 @@
 @property (nonatomic, readonly) AVMediaSelectionOption *defaultOption;
 @property (nonatomic, readonly) NSArray *options;
 
+// Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
+
 + (id)mediaSelectionGroupWithAsset:(id)arg1 dictionary:(id)arg2;
 + (id)mediaSelectionOptionsFromArray:(id)arg1 filteredAndSortedAccordingToPreferredLanguages:(id)arg2;
 + (id)mediaSelectionOptionsFromArray:(id)arg1 withLocale:(id)arg2;
@@ -35,5 +37,9 @@
 - (id)init;
 - (id)mediaSelectionOptionWithPropertyList:(id)arg1;
 - (id)options;
+
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+
+- (id)makeNowPlayingInfoLanguageOptionGroup;
 
 @end

@@ -65,6 +65,9 @@
 @property (copy) NSArray *fileProviderUserInfoValues;
 @property (copy) NSString *filename;
 @property (nonatomic, readonly) bool hasCodedCustomAttributes;
+@property (nonatomic, copy) NSString *ic_dataSourceIdentifier;
+@property (nonatomic, copy) NSString *ic_managedObjectIDURI;
+@property (nonatomic) unsigned long long ic_searchResultType;
 @property (retain) NSNumber *isPlaceholder;
 @property (copy) NSDate *lastApplicationLaunchedDate;
 @property (copy) NSString *lastEditorIdentifier;
@@ -110,6 +113,8 @@
 @property (copy) NSString *userActivityType;
 @property (copy) NSArray *userTags;
 @property (copy) NSString *versionIdentifier;
+
+// Image: /System/Library/Frameworks/CoreSpotlight.framework/CoreSpotlight
 
 + (id)_allKeys;
 + (id)_requiredAttributesForContentType:(id)arg1;
@@ -730,5 +735,30 @@
 - (id)videoBitRate;
 - (id)weakRelatedUniqueIdentifier;
 - (id)whiteBalance;
+
+// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
+
+- (id)__ck_itemContentCreationDate;
+- (id)__ck_privateMutableAttributesDictionary;
+- (id)__ck_spotlightItemSnippet;
+
+// Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
+
++ (id)ic_customAttributeKeyDictionary;
++ (id)ic_customAttributeKeyWithName:(id)arg1 searchable:(bool)arg2 searchableByDefault:(bool)arg3 unique:(bool)arg4 multiValued:(bool)arg5;
++ (id)ic_dataSourceIdentifierCustomKey;
++ (id)ic_managedObjectIDCustomKey;
++ (id)ic_searchResultTypeCustomKey;
++ (id)ic_specializedIndexFieldAttributeKeyForStringField:(id)arg1;
+
+- (id)ic_dataSourceIdentifier;
+- (long long)ic_daysSinceModification;
+- (id)ic_managedObjectIDURI;
+- (void)ic_populateValuesForSpecializedFields;
+- (unsigned long long)ic_relevance;
+- (unsigned long long)ic_searchResultType;
+- (void)setIc_dataSourceIdentifier:(id)arg1;
+- (void)setIc_managedObjectIDURI:(id)arg1;
+- (void)setIc_searchResultType:(unsigned long long)arg1;
 
 @end

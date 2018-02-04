@@ -46,6 +46,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIColor *tintColor;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (double)_cornerRadiusForTraitCollection:(id)arg1;
 + (double)_dividerWidthForTraitCollection:(id)arg1;
 + (double)_lineWidthForTraitCollection:(id)arg1;
@@ -238,5 +240,17 @@
 - (id)viewForLastBaselineLayout;
 - (float)widthForSegment:(unsigned long long)arg1;
 - (double)widthForSegmentAtIndex:(unsigned long long)arg1;
+
+// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+
+- (long long)_mapkit_numberOfSegments;
+- (void)_mapkit_removeAllSegments;
+- (long long)_mapkit_selectedSegmentIndex;
+- (void)_mapkit_setSelectedSegmentIndex:(long long)arg1;
+- (void)_mapkit_setTitle:(id)arg1 forSegmentAtIndex:(long long)arg2 insertIfNeeded:(bool)arg3;
+
+// Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
+
+- (void)sizeToFitWithMinimumSegmentWidth:(double)arg1 maximumTotalWidth:(double)arg2;
 
 @end

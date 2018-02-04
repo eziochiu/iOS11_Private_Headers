@@ -20,6 +20,7 @@
 @property (getter=isEditable, nonatomic, readonly) bool editable;
 @property (getter=isEditing, nonatomic, readonly) bool editing;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool ic_isFirstResponder;
 @property (nonatomic, readonly) UIView *inputAccessoryView;
 @property (nonatomic, readonly) UIInputViewController *inputAccessoryViewController;
 @property (nonatomic, readonly) UITextInputAssistantItem *inputAssistantItem;
@@ -34,6 +35,8 @@
 @property (nonatomic, readonly) UITextInputMode *textInputMode;
 @property (nonatomic, readonly) NSUndoManager *undoManager;
 @property (nonatomic, retain) NSUserActivity *userActivity;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (void)_cleanupAllStateRestorationTables;
 + (void)_cleanupStateRestorationObjectIdentifierTrackingTables;
@@ -282,5 +285,39 @@
 - (id)undoManager;
 - (void)updateUserActivityState:(id)arg1;
 - (id)userActivity;
+
+// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
+
++ (id)currentFirstResponder;
+
+- (void)findFirstResponder:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/NanoTimeKitCompanion
+
+- (bool)_ntk_becomeFirstResponder;
+
+// Image: /System/Library/PrivateFrameworks/NotesUI.framework/NotesUI
+
+- (bool)ic_becomeFirstResponder;
+- (bool)ic_inhbitsGlobalKeyCommands;
+- (bool)ic_isFirstResponder;
+
+// Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
+
+- (id)_SKUIView;
+
+// Image: /System/Library/PrivateFrameworks/TSReading.framework/TSReading
+
++ (id)tswp_currentFirstResponder;
+
+- (void)tswp_findFirstResponder:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
+
+- (void)tvmlkit_handleEvent:(id)arg1 forElement:(id)arg2 andSourceView:(id)arg3;
+
+// Image: /System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
+
+- (id)tk_firstViewControllerInResponderChain;
 
 @end

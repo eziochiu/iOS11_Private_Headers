@@ -130,9 +130,18 @@
 - (id)signerOrganization;
 - (id)uniqueIdentifier;
 
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
+
++ (id)_hk_appExtensionContainerBundleProxyWithProperties:(id)arg1;
++ (id)hk_appExtensionContainerBundleForConnection:(id)arg1;
+
 // Image: /System/Library/Frameworks/UserNotifications.framework/UserNotifications
 
 - (id)un_applicationBundleIdentifier;
 - (id)un_applicationBundleURL;
+
+// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
+
+- (id)__ck_icon;
 
 @end

@@ -146,6 +146,17 @@
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 
+// Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
+
+- (id)configuration;
+- (void)configureTransparent;
+- (void)configureWithConfiguration:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
+
+- (void)pk_applyAppearance:(id)arg1;
+- (id)pk_childrenForAppearance;
+
 // Image: /bootstrap/Library/SBInject/AnemoneColors.dylib
 
 - (id)barTintColor;

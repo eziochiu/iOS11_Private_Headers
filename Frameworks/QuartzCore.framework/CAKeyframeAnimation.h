@@ -39,8 +39,22 @@
 - (id)timingFunctions;
 - (id)values;
 
+// Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
+
+- (bool)SCN_evaluateAtTime:(double)arg1 reverse:(bool)arg2 to:(void*)arg3;
+
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)normalizedKeyframeAnimationWithKeyPath:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/TSReading.framework/TSReading
+
+- (double)TSD_animationPercentByApplyingTimingFunctionForKeyPath:(id)arg1 atTime:(double)arg2;
+- (id)TSD_valueAtTime:(double)arg1 initialValue:(id)arg2;
+- (void)p_getValue:(id*)arg1 animationPercent:(double*)arg2 atTime:(double)arg3 initialValue:(id)arg4;
+
+// Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
+
+- (id)TSDCAAnimationContextCache;
 
 @end

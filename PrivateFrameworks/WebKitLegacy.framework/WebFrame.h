@@ -2,22 +2,28 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@interface WebFrame : NSObject {
+@interface WebFrame : NSObject <WBUFormAutoFillFrameHandle> {
     WebFramePrivate * _private;
 }
 
 @property (nonatomic, readonly) DOMDocument *DOMDocument;
 @property (nonatomic, readonly, copy) NSArray *childFrames;
 @property (nonatomic, readonly) WebDataSource *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) DOMHTMLElement *frameElement;
 @property (nonatomic, readonly) WebFrameView *frameView;
 @property (nonatomic, readonly) struct OpaqueJSContext { }*globalContext;
 @property (nonatomic, readonly) bool hasRichlyEditableDragCaret;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) JSContext *javaScriptContext;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly) WebFrame *parentFrame;
 @property (nonatomic, readonly) WebDataSource *provisionalDataSource;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) WebView *webView;
+@property (nonatomic, readonly) NSURL *webui_URL;
+@property (nonatomic, readonly) struct __SecTrust { }*webui_serverTrust;
 @property (nonatomic, readonly) WebScriptObject *windowObject;
 
 // Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
@@ -282,5 +288,14 @@
 - (bool)containsOnlySelectableElements;
 - (bool)isMainFrame;
 - (bool)isTexty;
+
+// Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
+
+- (id)dd_newOperation;
+
+// Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
+
+- (id)webui_URL;
+- (struct __SecTrust { }*)webui_serverTrust;
 
 @end

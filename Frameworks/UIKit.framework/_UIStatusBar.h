@@ -47,11 +47,7 @@
 @property (nonatomic, copy) id /* block */ updateCompletionHandler;
 @property (nonatomic, retain) <_UIStatusBarVisualProvider> *visualProvider;
 
-+ (bool)forceSplit;
-+ (double)heightForOrientation:(long long)arg1;
-+ (void)initialize;
-+ (void)setDefaultVisualProviderClass:(Class)arg1;
-+ (void)setForceSplit:(bool)arg1;
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 - (void).cxx_destruct;
 - (id)_accessibilityHUDGestureManager:(id)arg1 HUDItemForPoint:(struct CGPoint { double x1; double x2; })arg2;
@@ -67,7 +63,6 @@
 - (void)_performAnimations:(id)arg1;
 - (void)_performWithMatchingCAAnimations:(id /* block */)arg1;
 - (void)_prepareAnimations:(id)arg1;
-- (void)_prepareVisualProviderIfNeeded;
 - (void)_rearrangeOverflowedItems;
 - (id)_regionsForPartWithIdentifier:(id)arg1;
 - (id)_statusBarWindowForAccessibilityHUD;
@@ -132,5 +127,15 @@
 - (void)updateWithAnimations:(id)arg1;
 - (void)updateWithData:(id)arg1;
 - (id)visualProvider;
+
+// Image: /bootstrap/Library/SBInject/LittleX.dylib
+
++ (bool)forceSplit;
++ (double)heightForOrientation:(long long)arg1;
++ (void)initialize;
++ (void)setDefaultVisualProviderClass:(Class)arg1;
++ (void)setForceSplit:(bool)arg1;
+
+- (void)_prepareVisualProviderIfNeeded;
 
 @end

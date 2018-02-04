@@ -62,6 +62,8 @@
 @property (getter=_textShadowColor, setter=_setTextShadowColor:, nonatomic, retain) UIColor *textShadowColor;
 @property (getter=_usesModernStyle, setter=_setUsesModernStyle:) bool usesModernStyle;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (struct CGSize { double x1; double x2; })defaultSizeForCurrentOrientation;
 + (struct CGSize { double x1; double x2; })defaultSizeForMainScreenTraits;
 + (struct CGSize { double x1; double x2; })defaultSizeForTraits:(id)arg1;
@@ -188,5 +190,10 @@
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)viewForRow:(long long)arg1 forComponent:(long long)arg2;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })visibleRowsForColumn:(int)arg1;
+
+// Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
+
+- (void)pk_applyAppearance:(id)arg1;
+- (id)pk_childrenForAppearance;
 
 @end

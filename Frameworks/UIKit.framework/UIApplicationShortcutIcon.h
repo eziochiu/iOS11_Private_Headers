@@ -8,6 +8,8 @@
 
 @property (nonatomic, readonly) SBSApplicationShortcutIcon *sbsShortcutIcon;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (id)iconWithCustomImage:(id)arg1;
 + (id)iconWithCustomImage:(id)arg1 isTemplate:(bool)arg2;
 + (id)iconWithTemplateImageName:(id)arg1;
@@ -21,5 +23,9 @@
 - (id)initWithSBSApplicationShortcutIcon:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (id)sbsShortcutIcon;
+
+// Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
+
++ (id)iconWithContact:(id)arg1;
 
 @end

@@ -25,6 +25,8 @@
 @property (nonatomic, copy) NSString *multichannelAudioStrategy;
 @property (nonatomic, readonly) long long status;
 
+// Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
+
 + (int)_createFigPlayerWithType:(long long)arg1 player:(struct OpaqueFigPlayer {}**)arg2;
 + (bool)automaticallyNotifiesObserversOfActionAtItemEnd;
 + (bool)automaticallyNotifiesObserversOfAirPlayVideoActive;
@@ -220,7 +222,6 @@
 - (long long)externalPlaybackType;
 - (id)externalPlaybackVideoGravity;
 - (void)finalize;
-- (id)init;
 - (id)initWithDispatchQueue:(id)arg1;
 - (id)initWithFigPlayer:(struct OpaqueFigPlayer { }*)arg1;
 - (id)initWithPlayerItem:(id)arg1;
@@ -261,7 +262,6 @@
 - (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 toleranceBefore:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 toleranceAfter:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 completionHandler:(id /* block */)arg4;
 - (void)setActionAtItemEnd:(long long)arg1;
 - (void)setAllowsAirPlayVideo:(bool)arg1;
-- (void)setAllowsExternalPlayback:(bool)arg1;
 - (void)setAllowsOutOfBandTextTrackRendering:(bool)arg1;
 - (void)setAllowsPixelBufferPoolSharing:(bool)arg1;
 - (void)setAppliesMediaSelectionCriteriaAutomatically:(bool)arg1;
@@ -310,5 +310,14 @@
 - (id)vibrationPattern;
 - (float)volume;
 - (void)willChangeValueForKey:(id)arg1;
+
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
+- (id)pu_generateSnapshotImageAtTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+
+// Image: /bootstrap/Library/SBInject/LittleX.dylib
+
+- (id)init;
+- (void)setAllowsExternalPlayback:(bool)arg1;
 
 @end

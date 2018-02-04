@@ -153,4 +153,8 @@
 - (id)userInfo;
 - (id)versionIdentifier;
 
+// Image: /System/Library/PrivateFrameworks/ContactsUICore.framework/ContactsUICore
+
+- (id)_cnui_valueForAttribute:(id)arg1;
+
 @end

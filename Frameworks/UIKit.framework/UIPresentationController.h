@@ -88,6 +88,7 @@
 @property (nonatomic, readonly) UIView *preferredFocusedView;
 @property (nonatomic, readonly) long long presentationStyle;
 @property (getter=_presentationView, setter=_setPresentationView:, nonatomic, retain) UIView *presentationView;
+@property (nonatomic, readonly) NCNotificationViewController *presentedNotificationViewController;
 @property (nonatomic, readonly) UIView *presentedView;
 @property (setter=_setPresentedViewController:, nonatomic, retain) UIViewController *presentedViewController;
 @property (setter=_setPresentingViewController:, nonatomic, retain) UIViewController *presentingViewController;
@@ -99,6 +100,8 @@
 @property (nonatomic) long long state;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UITraitCollection *traitCollection;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_defaultBaseContentInsetsForView:(id)arg1 leftMargin:(double*)arg2 rightMargin:(double*)arg3;
 + (bool)_preventsAppearanceProxyCustomization;
@@ -281,5 +284,9 @@
 - (void)updateFocusIfNeeded;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/UserNotificationsUIKit.framework/UserNotificationsUIKit
+
+- (id)presentedNotificationViewController;
 
 @end

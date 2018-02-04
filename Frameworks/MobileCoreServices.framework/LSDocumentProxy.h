@@ -61,6 +61,10 @@
 - (id)typeIdentifier;
 - (id)uniqueIdentifier;
 
+// Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
+
++ (id)_sf_documentProxyForName:(id)arg1 type:(id)arg2 MIMEType:(id)arg3 sourceURL:(id)arg4;
+
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 - (struct CGSize { double x1; double x2; })_defaultStyleSize:(id)arg1;

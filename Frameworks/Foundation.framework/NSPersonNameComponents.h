@@ -14,6 +14,8 @@
 @property (copy) NSString *nickname;
 @property (copy) NSPersonNameComponents *phoneticRepresentation;
 
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
+
 + (id)__componentsRequiredForScriptDetectionWithPhoneticDesired:(bool)arg1;
 + (id)_allComponents;
 + (id)_allProperties;
@@ -44,5 +46,31 @@
 - (void)setNameSuffix:(id)arg1;
 - (void)setNickname:(id)arg1;
 - (void)setPhoneticRepresentation:(id)arg1;
+
+// Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
+
+- (id)CKDescriptionPropertiesWithPublic:(bool)arg1 private:(bool)arg2 shouldExpand:(bool)arg3;
+
+// Image: /System/Library/Frameworks/Contacts.framework/Contacts
+
++ (id)componentsForContact:(id)arg1;
++ (id)descriptorForUsedKeys;
++ (id)keyPathMapping;
++ (id)keyVectorForUsedKeys;
+
+- (void)overrideComponentsInContact:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
+
+- (id)br_formattedName;
+
+// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
+
+- (bool)isGivenNameFirst;
+
+// Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
+
+- (id)ic_componentsForSearchHighlighting;
+- (id)ic_localizedNameWithDefaultFormattingStyle;
 
 @end

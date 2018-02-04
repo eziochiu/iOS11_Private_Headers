@@ -32,6 +32,8 @@
 @property (getter=_useCurrentDateDuringDecoding, setter=_setUseCurrentDateDuringDecoding:, nonatomic) bool useCurrentDateDuringDecoding;
 @property (getter=_usesBlackChrome, setter=_setUsesBlackChrome:, nonatomic) bool usesBlackChrome;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 - (void).cxx_destruct;
 - (bool)_allowsZeroCountDownDuration;
 - (bool)_allowsZeroTimeInterval;
@@ -116,5 +118,10 @@
 - (id)timeZone;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)willReceiveBindingsUpdate;
+
+// Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
+
+- (void)pk_applyAppearance:(id)arg1;
+- (id)pk_childrenForAppearance;
 
 @end

@@ -304,6 +304,8 @@
 @property (getter=_contentInsetIncludingDecorations, nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } _contentInsetIncludingDecorations;
 @property (nonatomic, readonly, retain) NSISVariable *_contentWidthVariable;
 @property (setter=_setRefreshControl:, nonatomic, retain) UIRefreshControl *_refreshControl;
+@property (nonatomic, readonly) bool _sf_isScrolledPastTop;
+@property (nonatomic, readonly) bool _sf_isScrolledToOrPastBottom;
 @property (nonatomic, readonly) _UIStaticScrollBar *_staticScrollBar;
 @property (setter=_setUseContentDimensionVariablesForConstraintLowering:, nonatomic) bool _useContentDimensionVariablesForConstraintLowering;
 @property (setter=_setWantsConstrainedContentSize:, nonatomic) bool _wantsConstrainedContentSize;
@@ -323,6 +325,7 @@
 @property (getter=_canScrollY, nonatomic, readonly) bool canScrollY;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInset;
 @property (nonatomic) long long contentInsetAdjustmentBehavior;
+@property (getter=isContentLargerThanBounds, nonatomic, readonly) bool contentLargerThanBounds;
 @property (nonatomic, readonly) UILayoutGuide *contentLayoutGuide;
 @property (nonatomic) struct CGPoint { double x1; double x2; } contentOffset;
 @property (getter=_contentScrollsAlongXAxis, setter=_setContentScrollsAlongXAxis:, nonatomic) bool contentScrollsAlongXAxis;
@@ -349,6 +352,7 @@
 @property (getter=_isAnimatingZoom, nonatomic, readonly) bool isAnimatingZoom;
 @property (getter=_isHorizontalBouncing, nonatomic, readonly) bool isHorizontalBouncing;
 @property (getter=_isVerticalBouncing, nonatomic, readonly) bool isVerticalBouncing;
+@property (nonatomic, readonly) ISUIScrollViewVitalityController *is_vitalityController;
 @property (nonatomic) long long keyboardDismissMode;
 @property (getter=_maximumContentOffset, nonatomic, readonly) struct CGPoint { double x1; double x2; } maximumContentOffset;
 @property (nonatomic) double maximumZoomScale;
@@ -358,10 +362,14 @@
 @property (nonatomic, readonly) UIPanGestureRecognizer *panGestureRecognizer;
 @property (nonatomic, readonly) UIPinchGestureRecognizer *pinchGestureRecognizer;
 @property (getter=isProgrammaticScrollEnabled, nonatomic) bool programmaticScrollEnabled;
+@property (nonatomic, readonly) bool pu_isBouncing;
+@property (nonatomic, readonly) bool pu_isPerformingScrollTest;
+@property (nonatomic, readonly) bool px_isPerformingScrollTest;
 @property (nonatomic, retain) UIRefreshControl *refreshControl;
 @property (getter=isScrollEnabled, nonatomic) bool scrollEnabled;
 @property (getter=_scrollHysteresis, nonatomic, readonly) double scrollHysteresis;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } scrollIndicatorInsets;
+@property (nonatomic, retain) UIScrollTestToBottomParameters *scrollTestParameters;
 @property (nonatomic, retain) id scrollTestParameters;
 @property (getter=_isScrollingToTop, nonatomic, readonly) bool scrollingToTop;
 @property (nonatomic) bool scrollsToTop;
@@ -378,6 +386,8 @@
 @property (getter=isZoomBouncing, nonatomic, readonly) bool zoomBouncing;
 @property (nonatomic) double zoomScale;
 @property (getter=isZooming, nonatomic, readonly) bool zooming;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (unsigned long long)_defaultEdgesScrollingContentIntoSafeArea;
 + (id)_implicitAnimationCulprits;
@@ -955,5 +965,138 @@
 - (void)willRotateToInterfaceOrientation:(id)arg1;
 - (double)zoomScale;
 - (void)zoomToRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 animated:(bool)arg2;
+
+// Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
+
+- (bool)mf_needsToAdjustContentOffset;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })mf_visibleBounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })mf_visibleFrame;
+- (double)mf_visibleHeight;
+
+// Image: /System/Library/Frameworks/PDFKit.framework/PDFKit
+
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })PDFKitDocumentVisibleRectIncludingContentInsets;
+
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
+- (void)_pu_beginPageSwipeTest:(id)arg1;
+- (void)_pu_endPageSwipeTest:(id)arg1;
+- (void)_pu_incrementForPageSwipeTest:(id)arg1 dt:(double)arg2 stop:(bool*)arg3;
+- (bool)_pu_isScrolledAtEdge:(unsigned int)arg1 tolerance:(double)arg2;
+- (id)_pu_pptScrollHelper;
+- (int)_pu_scrollableAxis;
+- (void)_pu_setPPTScrollHelper:(id)arg1;
+- (void)pu_cancelScrollAnimation;
+- (void)pu_cancelScrollGesture;
+- (struct CGSize { double x1; double x2; })pu_currentContentSize;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })pu_displayFrameForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)pu_isBouncing;
+- (bool)pu_isPerformingScrollTest;
+- (bool)pu_isScrolledAtEdge:(unsigned int)arg1;
+- (bool)pu_isScrolledAtEdge:(unsigned int)arg1 tolerance:(double)arg2;
+- (bool)pu_isScrolledBeyondEdge:(unsigned int)arg1;
+- (void)pu_ppt_performPageSwipeTest:(id)arg1 iterations:(long long)arg2 numberOfPages:(long long)arg3 scrollAxis:(int)arg4;
+- (void)pu_ppt_scrollToContentOffset:(struct CGPoint { double x1; double x2; })arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)pu_scrollToContentOffset:(struct CGPoint { double x1; double x2; })arg1 animated:(bool)arg2;
+- (void)pu_scrollToEdge:(unsigned int)arg1 animated:(bool)arg2;
+
+// Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
+
++ (bool)_sf_baseHorizontalScrollIndicatorInsetsExtendFullWidth:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_sf_baseInsetsForHorizontalScrollIndicatorInScrollViewContainerView:(id)arg1;
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_sf_baseInsetsForVerticalScrollIndicatorInScrollViewContainerView:(id)arg1;
++ (bool)_sf_baseVerticalScrollIndicatorInsetsExtendFullHeight:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
++ (bool)_sf_supportsPerAxisIndicatorInsets;
+
+- (bool)_sf_isScrolledPastTop;
+- (bool)_sf_isScrolledToOrPastBottom;
+- (void)_sf_setContentInsetAdjustments:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)_sf_setContentInsetIgnoringAutoContentOffsetAdjustment:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+
+// Image: /System/Library/PrivateFrameworks/AnnotationKit.framework/AnnotationKit
+
+- (void)_swizzled_scrollViewAnimationEnded:(id)arg1 finished:(bool)arg2;
+- (double)akMagnification;
+
+// Image: /System/Library/PrivateFrameworks/CardKit.framework/CardKit
+
+- (bool)_crk_subviewIsVisible:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
+
+- (struct CGSize { double x1; double x2; })__ck_contentSize;
+- (bool)__ck_isScrolledToBottom;
+- (bool)__ck_isScrolledToTop;
+- (bool)__ck_isVerticallyRubberBanding;
+- (void)__ck_scrollToBottom:(bool)arg1;
+- (struct CGPoint { double x1; double x2; })__ck_scrollToBottomContentOffset;
+- (void)__ck_scrollToTop:(bool)arg1;
+- (struct CGPoint { double x1; double x2; })__ck_scrollToTopContentOffset;
+
+// Image: /System/Library/PrivateFrameworks/FMCoreUI.framework/FMCoreUI
+
+- (void)centerContent;
+- (void)centerContentWithOffset:(struct CGPoint { double x1; double x2; })arg1 animated:(bool)arg2;
+- (bool)isContentLargerThanBounds;
+- (void)scrollSubviewToVisible:(id)arg1 animated:(bool)arg2;
+
+// Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
+
++ (id)_implicitAnimationCulprits;
+
+- (void)_incrementForScrollTest;
+- (void)_performScrollTestToBottom:(id)arg1 iterations:(int)arg2 delta:(int)arg3;
+- (void)_performScrollTestToBottom:(id)arg1 iterations:(int)arg2 delta:(int)arg3 length:(int)arg4;
+- (void)_performScrollTestToBottom:(id)arg1 iterations:(int)arg2 delta:(int)arg3 length:(int)arg4 scrollAxis:(int)arg5;
+- (void)_performScrollTestToBottom:(id)arg1 iterations:(int)arg2 delta:(int)arg3 scrollAxis:(int)arg4;
+- (void)_reenableImplicitAnimationsAfterScrollTest;
+- (id)_scrollTestExtraResults:(id)arg1;
+- (void)_suppressImplicitAnimationsForScrollTest;
+- (id)scrollTestParameters;
+- (void)setScrollTestParameters:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
+
+- (void)music_beginHidingVerticalScrollIndicator;
+- (void)music_endHidingVerticalScrollIndicator;
+
+// Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
+
+- (void)pk_applyAppearance:(id)arg1;
+- (id)pk_childrenForAppearance;
+- (void)pkui_adjustNavigationBarShadow:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })pkui_naturalRestingBounds;
+
+// Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
+
+- (id)keyForContentMode:(int)arg1;
+- (bool)restoreScrollPositionForKey:(id)arg1;
+- (void)saveScrollPositionForKey:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/PhotosPlayer.framework/PhotosPlayer
+
+- (void)is_didLayoutPlayerViews;
+- (id)is_scrollViewDelegate;
+- (id)is_vitalityController;
+- (id)is_vitalityControllerCreateIfNeeded:(bool)arg1;
+
+// Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
+
+- (bool)_px_isScrolledAtEdge:(unsigned int)arg1 tolerance:(double)arg2;
+- (struct CGPoint { double x1; double x2; })px_constrainedContentOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { double x1; double x2; })px_contentOffsetForEdge:(unsigned int)arg1;
+- (bool)px_isPerformingScrollTest;
+- (bool)px_isScrolledAtEdge:(unsigned int)arg1;
+- (bool)px_isScrolledAtEdge:(unsigned int)arg1 tolerance:(double)arg2;
+- (void)px_scrollToContentOffset:(struct CGPoint { double x1; double x2; })arg1 animated:(bool)arg2;
+- (void)px_scrollToEdge:(unsigned int)arg1 animated:(bool)arg2;
+
+// Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
+
+- (void)_testingScrollStep;
+- (void)runScrollTest:(id)arg1 withDelta:(float)arg2 forIterations:(int)arg3;
+- (void)scrollBy:(float)arg1 forIterations:(int)arg2;
+- (void)setTopExtensionViewColor:(id)arg1;
+- (id)topExtensionViewColor;
 
 @end

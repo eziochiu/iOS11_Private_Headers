@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UILayoutGuide : NSObject <NSCoding, NSISVariableDelegate, UILayoutItem_Internal, _UILayoutItem> {
+@interface UILayoutGuide : NSObject <AVKitLayoutItem, NSCoding, NSISVariableDelegate, SearchUIAutoLayoutItem, UILayoutItem_Internal, _UILayoutItem> {
     bool  __allowsNegativeDimensions;
     bool  __shouldBeArchived;
     bool  _allowOwningViewSetting;
@@ -76,6 +76,8 @@
 @property (nonatomic, readonly) NSLayoutXAxisAnchor *trailingAnchor;
 @property (nonatomic, readonly) UITraitCollection *traitCollection;
 @property (nonatomic, readonly) NSLayoutDimension *widthAnchor;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (double)_defaultSpacingBetweenGuidesForResolvingSymbolicConstant;
 
@@ -179,5 +181,18 @@
 - (id)traitCollection;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)widthAnchor;
+
+// Image: /System/Library/Frameworks/AVKit.framework/AVKit
+
+- (id)avkit_constraintsFromCenterAnchorsToCenterAnchorsOfItem:(id)arg1;
+- (id)avkit_constraintsFromCenterAndDimensionAnchorsToCenterAndDimensionAnchorsOfItem:(id)arg1;
+- (id)avkit_constraintsFromDimensionAnchorsToSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)avkit_constraintsFromEdgeAnchorsToEdgeAnchorsOfItem:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
+
+- (id)containerView;
+- (bool)isContainedByItem:(id)arg1;
+- (id)view;
 
 @end

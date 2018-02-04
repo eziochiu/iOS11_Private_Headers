@@ -78,14 +78,20 @@
 @property (nonatomic, retain) UIBarButtonItem *leftBarButtonItem;
 @property (nonatomic, copy) NSArray *leftBarButtonItems;
 @property (nonatomic) bool leftItemsSupplementBackButton;
+@property (setter=music_setTitleViewAlpha:, nonatomic) double music_titleViewAlpha;
 @property (nonatomic) UINavigationBar *navigationBar;
 @property (nonatomic, copy) NSString *prompt;
+@property (setter=pu_setBanner:, nonatomic, retain) PUAbstractNavigationBanner *pu_banner;
+@property (setter=px_setDisableLargeTitle:, nonatomic) bool px_disableLargeTitle;
+@property (setter=px_setPreferredLargeTitleDisplayMode:, nonatomic) long long px_preferredLargeTitleDisplayMode;
 @property (nonatomic, retain) UIBarButtonItem *rightBarButtonItem;
 @property (nonatomic, copy) NSArray *rightBarButtonItems;
 @property (nonatomic, retain) UISearchController *searchController;
 @property (nonatomic) long long tag;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, retain) UIView *titleView;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)defaultFont;
 
@@ -259,5 +265,40 @@
 - (id)title;
 - (id)titleView;
 - (void)updateNavigationBarButtonsAnimated:(bool)arg1;
+
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
+- (bool)_pu_shouldUpdateBarButtonItems:(id)arg1 withNewBarButtonItems:(id)arg2;
+- (id)pu_banner;
+- (void)pu_setBanner:(id)arg1;
+- (void)pu_setDefaultBackBarButtonItemWithTitle:(id)arg1;
+- (bool)pu_shouldUpdateLeftBarButtonItems:(id)arg1;
+- (bool)pu_shouldUpdateRightBarButtonItems:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
+
+- (void)music_setTitleViewAlpha:(double)arg1;
+- (double)music_titleViewAlpha;
+
+// Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
+
+- (void)_updateFinalLargeTitleDisplayMode;
+- (bool)px_disableLargeTitle;
+- (long long)px_preferredLargeTitleDisplayMode;
+- (void)px_setDisableLargeTitle:(bool)arg1;
+- (void)px_setPreferredLargeTitleDisplayMode:(long long)arg1;
+
+// Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
+
+- (void)rc_copyPropertiesFromItem:(id)arg1;
+- (void)rc_copyPropertiesFromItem:(id)arg1 animated:(bool)arg2;
+
+// Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
+
+- (void)fadeInTitleView;
+- (void)fadeOutTitleView;
+- (void)mergeValuesFromItem:(id)arg1;
+- (void)resetAllValues;
+- (void)setTitleView:(id)arg1 animated:(bool)arg2;
 
 @end

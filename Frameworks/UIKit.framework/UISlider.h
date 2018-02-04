@@ -39,6 +39,9 @@
     float  _value;
 }
 
+@property (nonatomic) double akMaximumValue;
+@property (nonatomic) double akMinimumValue;
+@property (nonatomic) double akValue;
 @property (getter=isContinuous, nonatomic) bool continuous;
 @property (nonatomic, readonly) UIImage *currentMaximumTrackImage;
 @property (nonatomic, readonly) UIImage *currentMinimumTrackImage;
@@ -54,6 +57,8 @@
 @property (getter=_modulationFeedbackGenerator, setter=_setModulationFeedbackGenerator:, nonatomic, retain) _UIModulationFeedbackGenerator *modulationFeedbackGenerator;
 @property (nonatomic, retain) UIColor *thumbTintColor;
 @property (nonatomic) float value;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (bool)_allowActionsToQueue;
 
@@ -171,5 +176,14 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })trackRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (float)value;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })valueTextRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+
+// Image: /System/Library/PrivateFrameworks/AnnotationKit.framework/AnnotationKit
+
+- (double)akMaximumValue;
+- (double)akMinimumValue;
+- (double)akValue;
+- (void)setAkMaximumValue:(double)arg1;
+- (void)setAkMinimumValue:(double)arg1;
+- (void)setAkValue:(double)arg1;
 
 @end

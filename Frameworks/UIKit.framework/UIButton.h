@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIButton : UIControl <NSCoding, UIAccessibilityContentSizeCategoryImageAdjusting, UIGestureRecognizerDelegate, _UIFloatingContentViewDelegate> {
+@interface UIButton : UIControl <ABText, CAMAccessibilityHUDItemProvider, NSCoding, TSDPlatformButtonProtocol, UIAccessibilityContentSizeCategoryImageAdjusting, UIGestureRecognizerDelegate, _UIFloatingContentViewDelegate> {
     long long  __imageContentMode;
     UIColor * __plainButtonBackgroundColor;
     UIImageView * _backgroundView;
@@ -73,6 +73,8 @@
 @property (setter=_setInternalTitlePaddingInsets:, nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } _internalTitlePaddingInsets;
 @property (getter=_plainButtonBackgroundColor, setter=_setPlainButtonBackgroundColor:, nonatomic, retain) UIColor *_plainButtonBackgroundColor;
 @property (setter=_setWantsAccessibilityUnderline:, nonatomic) bool _wantsAccessibilityUnderline;
+@property (nonatomic, copy) NSString *ab_text;
+@property (nonatomic, copy) NSDictionary *ab_textAttributes;
 @property (nonatomic) bool adjustsImageSizeForAccessibilityContentSizeCategory;
 @property (nonatomic) bool adjustsImageWhenDisabled;
 @property (nonatomic) bool adjustsImageWhenHighlighted;
@@ -96,6 +98,9 @@
 @property (nonatomic, retain) UIColor *tintColor;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } titleEdgeInsets;
 @property (nonatomic, readonly) UILabel *titleLabel;
+@property (nonatomic, copy) NSString *vs_normalTitle;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (bool)_buttonTypeIsModernUI:(long long)arg1;
 + (id)_checkmarkImage;
@@ -382,5 +387,95 @@
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateConstraints;
 - (id)viewForLastBaselineLayout;
+
+// Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
+
+- (id)ab_text;
+- (id)ab_textAttributes;
+- (void)setAb_text:(id)arg1;
+- (void)setAb_textAttributes:(id)arg1;
+
+// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+
+- (id)_mapkit_accessoryControlToExtendWithCallout;
+- (void)_mapkit_setAttributedTitle:(id)arg1;
+- (void)_mapkit_setImage:(id)arg1;
+- (id)_mapkit_title;
+
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
+- (void)pu_sendActionForControlEventsWithHighlightTimeout:(unsigned long long)arg1;
+- (void)pu_setRTLAwareContentEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)pu_setTitle:(id)arg1 withFallback:(id /* block */)arg2 forState:(unsigned long long)arg3;
+
+// Image: /System/Library/PrivateFrameworks/AppSupportUI.framework/AppSupportUI
+
+- (long long)_nui_isUIButtonType;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_nui_rectInsetsForBaseline;
+- (double)effectiveBaselineOffsetFromContentBottom;
+- (double)effectiveFirstBaselineOffsetFromContentTop;
+
+// Image: /System/Library/PrivateFrameworks/AuthKitUI.framework/AuthKitUI
+
++ (id)ak_passwordRecoveryButton;
+
+- (void)_ak_passwordRecoveryButtonTapped:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
+
+- (void)cam_updateContentInsetsToCenterImageWithinMinimumSize:(struct CGSize { double x1; double x2; })arg1;
+
+// Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
+
+- (id)hudItemForAccessibilityHUDManager:(id)arg1;
+- (void)selectedByAccessibilityHUDManager:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
+
++ (id)hk_buttonTintedWithColor:(id)arg1 title:(id)arg2 target:(id)arg3 action:(SEL)arg4;
++ (id)hk_multiLineRoundRectButtonTintedWithColor:(id)arg1 title:(id)arg2 target:(id)arg3 action:(SEL)arg4;
++ (id)hk_roundRectButtonTintedWithColor:(id)arg1 title:(id)arg2 target:(id)arg3 action:(SEL)arg4;
+
+// Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
+
+- (void)mpu_configureButtonWithTextDrawingContext:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
+
+- (void)pk_applyAppearance:(id)arg1;
+- (id)pk_childrenForAppearance;
+
+// Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
+
++ (id)_buttonBackgroundImageForType:(unsigned long long)arg1 color:(id)arg2 controlState:(unsigned long long)arg3;
++ (id)buttonWithPXType:(unsigned long long)arg1 color:(id)arg2;
+
+- (void)px_setTitle:(id)arg1 orAttributedTitle:(id)arg2 forState:(unsigned long long)arg3;
+- (void)px_updateTitleUsingBlock:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
+
++ (id)SKUITrending_defaultButtonFont;
++ (id)SKUITrending_searchButtonWithElement:(id)arg1;
++ (id)SKUITrending_searchButtonWithTitle:(id)arg1;
+
+- (void)SKUITrending_applyConfigurationFromElement:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/TSReading.framework/TSReading
+
++ (id)tsdPlatformButtonWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+
+- (void)setAlternateImageNamed:(id)arg1 inBundle:(id)arg2;
+- (void)setImageNamed:(id)arg1 inBundle:(id)arg2;
+- (void)setTarget:(id)arg1 action:(SEL)arg2;
+
+// Image: /System/Library/PrivateFrameworks/VideoSubscriberAccountUI.framework/VideoSubscriberAccountUI
+
+- (void)setVs_normalTitle:(id)arg1;
+- (id)vs_normalTitle;
+
+// Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
+
+- (void)configureFromScriptButton:(id)arg1;
 
 @end

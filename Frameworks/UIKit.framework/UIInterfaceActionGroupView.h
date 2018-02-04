@@ -73,6 +73,8 @@
 @property (nonatomic) <UIInterfaceActionVisualStyleProviding> *visualStyleProvider;
 @property (nonatomic, readonly) NSPointerArray *weakSimultaneouslyPresentedGroupViews;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 - (void).cxx_destruct;
 - (long long)_actionLayoutAxisUnknowDisallowed;
 - (bool)_actionLayoutAxisUnknownDisallowedIsVertical;
@@ -203,5 +205,9 @@
 - (id)visualStyle;
 - (id)visualStyleProvider;
 - (id)weakSimultaneouslyPresentedGroupViews;
+
+// Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
+
+- (id)newActionSeparatorView;
 
 @end

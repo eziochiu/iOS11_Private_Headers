@@ -138,8 +138,20 @@
 - (id)initWithDisposition:(id)arg1;
 - (void)set_allowsWCA:(bool)arg1;
 
+// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
+
+- (void)applyNSURLConnectionProperties:(id)arg1;
+- (void)geo_configureWithRequest:(id)arg1;
+- (bool)geo_hasApplicationAttribution:(id)arg1;
+- (bool)geo_isCompatibleWithRequest:(id)arg1;
+- (void)geo_setApplicationAttribution:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/ProtocolBuffer.framework/ProtocolBuffer
 
 - (void)applyNSURLConnectionProperties:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/VideoSubscriberAccountUI.framework/VideoSubscriberAccountUI
+
++ (id)vs_defaultSessionConfigurationForSourceAppWithAuditToken:(id)arg1;
 
 @end

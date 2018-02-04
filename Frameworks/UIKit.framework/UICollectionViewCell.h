@@ -41,6 +41,8 @@
 @property (getter=_selectionAnimationDuration, nonatomic, readonly) double selectionAnimationDuration;
 @property (readonly) Class superclass;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (Class)_contentViewClass;
 
 - (void).cxx_destruct;
@@ -112,5 +114,9 @@
 - (void)setSemanticContentAttribute:(long long)arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (struct CGSize { double x1; double x2; })systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
+
+// Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
+
+- (void)unloadExpensiveViews;
 
 @end

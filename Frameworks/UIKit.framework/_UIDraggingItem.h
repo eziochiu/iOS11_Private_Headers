@@ -45,6 +45,8 @@
 @property (nonatomic) double scale;
 @property (nonatomic) <_UIDraggingItemVisualTarget> *sourceVisualTarget;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 - (void).cxx_destruct;
 - (void)_clearDirty;
 - (unsigned long long)_dirtyReasons;
@@ -91,5 +93,9 @@
 - (void)setScale:(double)arg1;
 - (void)setSourceVisualTarget:(id)arg1;
 - (id)sourceVisualTarget;
+
+// Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
+
++ (id)px_draggingItemForAsset:(id)arg1 sourceVisualTarget:(id)arg2 hintIndexPath:(id)arg3 imageComponentsProvider:(id /* block */)arg4;
 
 @end

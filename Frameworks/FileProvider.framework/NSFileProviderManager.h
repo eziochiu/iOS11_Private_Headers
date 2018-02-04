@@ -18,6 +18,8 @@
 @property (copy) NSArray *presentedFiles;
 @property (nonatomic, readonly) NSString *providerIdentifier;
 
+// Image: /System/Library/Frameworks/FileProvider.framework/FileProvider
+
 + (void)addDomain:(id)arg1 completionHandler:(id /* block */)arg2;
 + (void)addDomain:(id)arg1 forProviderIdentifier:(id)arg2 completionHandler:(id /* block */)arg3;
 + (id)defaultManager;
@@ -46,5 +48,9 @@
 - (void)remoteFileProviderWithCompletionHandler:(id /* block */)arg1;
 - (void)setPresentedFiles:(id)arg1;
 - (void)signalEnumeratorForContainerItemIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
+
+// Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
+
++ (id)brc_sharedProviderManager;
 
 @end

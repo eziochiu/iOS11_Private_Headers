@@ -45,8 +45,67 @@
 - (unsigned long long)version;
 - (unsigned long long)versionForSelector:(SEL)arg1;
 
+// Image: /System/Library/Frameworks/CallKit.framework/CallKit
+
++ (id)cx_callControllerHostInterface;
++ (id)cx_callControllerVendorInterface;
++ (id)cx_callDirectoryManagerDefaultHostInterface;
++ (id)cx_callDirectoryManagerMaintenanceHostInterface;
++ (id)cx_callDirectoryProviderHostInterface;
++ (id)cx_callDirectoryProviderVendorInterface;
++ (id)cx_providerHostInterface;
++ (id)cx_providerVendorInterface;
+
+- (id)_cx_callControllerAllowedClasses;
+- (id)_cx_callDirectoryManagerAllowedClasses;
+- (id)_cx_callDirectoryProviderAllowedClasses;
+- (id)_cx_providerAllowedClasses;
+- (void)_cx_setAllowedClassesForCallControllerHostProtocol;
+- (void)_cx_setAllowedClassesForCallControllerVendorProtocol;
+- (void)_cx_setAllowedClassesForCallDirectoryManagerDefaultHostProtocol;
+- (void)_cx_setAllowedClassesForCallDirectoryProviderHostProtocol;
+- (id)cx_allowedClasses;
+- (void)cx_setAllowedClassesForProviderHostProtocol;
+- (void)cx_setAllowedClassesForProviderVendorProtocol;
+
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
+
+- (id)_cachedSetForArrayOfClass:(Class)arg1;
+- (id)hk_setArrayOfClass:(Class)arg1 forSelector:(SEL)arg2 argumentIndex:(unsigned long long)arg3 ofReply:(bool)arg4;
+
+// Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
+
++ (id)hm_setupRemoteHostInterface;
++ (id)hm_setupRemoteServiceInterface;
++ (id)hm_userManagementRemoteHostInterface;
++ (id)hm_userManagementRemoteServiceInterface;
+
+// Image: /System/Library/Frameworks/IdentityLookup.framework/IdentityLookup
+
++ (id)id_messageFilterExtensionHostInterface;
++ (id)id_messageFilterExtensionVendorInterface;
++ (id)id_messageFilterHostInterface;
+
+// Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
+
++ (id)mf_mailComposeRemoteHostInterface;
++ (id)mf_mailComposeRemoteServiceInterface;
+
+// Image: /System/Library/Frameworks/Messages.framework/Messages
+
++ (id)__mf_messageComposerExtensionInterface;
++ (id)__mf_messageComposerHostInterface;
+
 // Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
 
 - (void)ls_setArgumentClasses:(id)arg1 replyClasses:(id)arg2 forSelector:(SEL)arg3;
+
+// Image: /System/Library/PrivateFrameworks/AppPredictionInternal.framework/AppPredictionInternal
+
+- (void)atx_addClass:(Class)arg1 forSelector:(SEL)arg2 argumentIndex:(unsigned long long)arg3 ofReply:(bool)arg4;
+
+// Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
+
++ (id)af_siriTaskDeliveringInterface;
 
 @end

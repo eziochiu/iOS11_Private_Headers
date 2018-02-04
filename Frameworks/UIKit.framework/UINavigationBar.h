@@ -415,6 +415,25 @@
 - (void)updateConstraints;
 - (void)updatePrompt;
 
+// Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
+
+- (void)_cnui_applyContactStyle;
+
+// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
+
+- (void)setBizEffectStyle:(bool)arg1;
+- (void)setDarkEffectStyle:(bool)arg1;
+
+// Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
+
+- (void)_gkApplyTheme:(id)arg1;
+- (void)_gkApplyTheme:(id)arg1 navbarStyle:(long long)arg2;
+
+// Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
+
+- (void)pk_applyAppearance:(id)arg1;
+- (id)pk_childrenForAppearance;
+
 // Image: /bootstrap/Library/SBInject/AnemoneColors.dylib
 
 - (id)barTintColor;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@interface NSURLSessionTask : NSObject <NSCopying, NSProgressReporting> {
+@interface NSURLSessionTask : NSObject <FCOperationPrioritizing, NSCopying, NSProgressReporting> {
     bool  __extractorFinishedDecoding;
     bool  __extractorPreparedForExtraction;
     double  __loadingPriority;
@@ -96,6 +96,7 @@
 @property (copy) NSURLRequest *originalRequest;
 @property float priority;
 @property (readonly) NSProgress *progress;
+@property (nonatomic) long long relativePriority;
 @property (copy) NSURLResponse *response;
 @property (retain) NSURLSession *session;
 @property double startTime;
@@ -105,6 +106,8 @@
 @property (copy) NSString *taskDescription;
 @property unsigned long long taskIdentifier;
 @property (readonly, retain) NSObject<OS_dispatch_queue> *workQueue;
+
+// Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
 
 + (id)taskForWrappedRequest:(id)arg1;
 
@@ -152,5 +155,10 @@
 - (bool)shouldHandleCookiesAndSchemeIsAppropriate;
 - (void)suspend;
 - (void)updateCurrentRequest:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
+
+- (long long)relativePriority;
+- (void)setRelativePriority:(long long)arg1;
 
 @end

@@ -80,8 +80,25 @@
 - (id)trueExpression;
 - (id)variable;
 
+// Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
+
+- (id)CKExpressionValue;
+
 // Image: /System/Library/Frameworks/CoreData.framework/CoreData
 
 - (id)minimalFormInContext:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
+
+- (bool)br_isConstantValueExpression:(id)arg1;
+- (bool)br_isKeyPathExpression:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
+
++ (id)expressionWithCKDPRecordFieldValue:(id)arg1 translator:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
+
++ (id)expressionWithFCCKPRecordFieldValue:(id)arg1 translator:(id)arg2;
 
 @end

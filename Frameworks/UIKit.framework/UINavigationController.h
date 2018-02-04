@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UINavigationController : UIViewController <UIGestureRecognizerDelegatePrivate, UILayoutContainerViewDelegate, _UINavigationBarDelegatePrivate, _UIScrollViewScrollObserver> {
+@interface UINavigationController : UIViewController <GKContentRefresh, GKURLHandling, HUPreloadableViewController, UIGestureRecognizerDelegatePrivate, UILayoutContainerViewDelegate, _UINavigationBarDelegatePrivate, _UIScrollViewScrollObserver> {
     NSString * __backdropGroupName;
     _UIAnimationCoordinator * __barInteractiveAnimationCoordinator;
     _UIBarPanGestureRecognizer * __barSwipeHideGesture;
@@ -174,6 +174,7 @@
 @property (nonatomic) bool needsDeferredTransition;
 @property (nonatomic) bool pretendNavBarHidden;
 @property (nonatomic, readonly) UIViewController *previousViewController;
+@property (nonatomic, readonly) PXSnapBackController *px_snapBackController;
 @property (getter=_rememberedFocusedItemsByViewController, nonatomic, readonly) NSMapTable *rememberedFocusedItemsByViewController;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UIToolbar *toolbar;
@@ -181,6 +182,8 @@
 @property (nonatomic, readonly) UIViewController *topViewController;
 @property (nonatomic, copy) NSArray *viewControllers;
 @property (nonatomic, readonly) UIViewController *visibleViewController;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (bool)_directlySetsContentOverlayInsetsForChildren;
 + (bool)_shouldSendLegacyMethodsFromViewWillTransitionToSize;
@@ -695,5 +698,109 @@
 - (void)willRotateToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (void)willShowViewController:(id)arg1 animated:(bool)arg2;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
+
+// Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
+
+- (id)mf_findViewControllerOfClass:(Class)arg1 startAtTopOfStack:(bool)arg2;
+- (id)mf_keyPathsMapForUICustomization;
+
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
+- (void)_pu_setCurrentNavigationTransition:(id)arg1;
+- (id)pu_currentInteractiveTransition;
+- (id)pu_currentNavigationTransition;
+- (void)pu_navigationTransitionDidEnd:(id)arg1;
+- (void)pu_navigationTransitionWillEnd:(id)arg1;
+- (void)pu_navigationTransitionWillStart:(id)arg1;
+- (void)pu_popToViewController:(id)arg1 animated:(bool)arg2 interactive:(bool)arg3;
+- (bool)pu_popToViewControllerIfAllowed:(id)arg1 animated:(bool)arg2 forced:(bool)arg3;
+- (void)pu_popViewControllerAnimated:(bool)arg1 interactive:(bool)arg2;
+- (void)pu_pushViewController:(id)arg1 withTransition:(id)arg2 animated:(bool)arg3 isInteractive:(bool)arg4;
+- (double)px_imageModulationIntensityWithProposedValue:(double)arg1;
+
+// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
+
+- (void)__ck_callDelegateBlocks;
+- (void)__ck_enqueueCompletionBlock:(id /* block */)arg1;
+- (id)__ck_popToRootViewControllerAnimated:(bool)arg1 completion:(id /* block */)arg2;
+- (id)__ck_popToViewController:(id)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
+- (id)__ck_popViewControllerAnimated:(bool)arg1 completion:(id /* block */)arg2;
+- (void)__ck_pushViewController:(id)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
+
+// Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
+
+- (void)popToSigninControllerAnimated:(bool)arg1;
+- (id)signInControllerInHierarchy;
+
+// Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
+
+- (void)_gkReplaceTopViewControllerWithViewController:(id)arg1 transition:(id)arg2;
+- (void)_gkSetViewControllers:(id)arg1 transition:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
+
+- (void)_gkForceNextContentUpdate;
+- (void)_gkHandleURLPathComponents:(id)arg1 query:(id)arg2;
+- (void)_gkRefreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2;
+- (void)_gkResetContents;
+- (void)_gkSetContentsNeedUpdateWithHandler:(id /* block */)arg1;
+- (bool)_gkShouldRefreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2;
+- (void)_gkUpdateContentsWithCompletionHandlerAndError:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
+
+- (id)hu_preloadContent;
+- (id)hu_presentedItem;
+- (id)hu_pushPreloadableViewController:(id)arg1 animated:(bool)arg2;
+
+// Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
+
+- (void)MPU_popToViewController:(id)arg1 animated:(bool)arg2 popRequestSentCompletion:(id /* block */)arg3;
+- (void)MPU_popToViewControllerBeforeViewController:(id)arg1 animated:(bool)arg2;
+
+// Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
+
+- (void)pk_applyAppearance:(id)arg1;
+- (id)pk_childrenForAppearance;
+- (id)pkui_compactNavigationContainer;
+
+// Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
+
++ (id)px_defaultDelegateForNavigationController:(id)arg1;
++ (id)px_navigationController:(id)arg1 animationControllerForOperation:(long long)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;
++ (id)px_navigationController:(id)arg1 interactionControllerForAnimationController:(id)arg2;
++ (id)px_navigationControllerShouldUseBuiltinInteractionController:(id)arg1;
+
+- (void)_ppt_setTransitionAnimationCompletionHandler:(id /* block */)arg1;
+- (id /* block */)_ppt_transitionAnimationCompletionHandler;
+- (void)ppt_installTransitionAnimationCompletionHandler:(id /* block */)arg1;
+- (void)ppt_notifyTransitionAnimationDidComplete;
+- (double)px_HDRFocus;
+- (id)px_diagnosticsItemProvidersForPoint:(struct CGPoint { double x1; double x2; })arg1 inCoordinateSpace:(id)arg2;
+- (double)px_imageModulationIntensity;
+- (bool)px_isImageModulationEnabled;
+- (bool)px_preparePopToViewController:(id)arg1 forced:(bool)arg2;
+- (id)px_snapBackController;
+
+// Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
+
+- (void)popRecursivelyToRootController;
+
+// Image: /System/Library/PrivateFrameworks/VideosExtras.framework/VideosExtras
+
+- (void)_VideosExtras_replaceViewController:(id)arg1 withViewController:(id)arg2 animated:(bool)arg3;
+
+// Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
+
+- (void)rc_changeTopNavigationItemPropertiesToPropertiesInNavigationItem:(id)arg1 animated:(bool)arg2;
+
+// Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
+
+- (void)_setStoreBarStyle:(long long)arg1 clientInterface:(id)arg2;
+- (id)firstViewController;
+- (unsigned long long)indexOfViewController:(id)arg1;
+- (void)invalidate;
+- (void)tabBarControllerDidLongPressTabBarItem:(id)arg1;
+- (void)tabBarControllerDidReselectTabBarItem:(id)arg1;
 
 @end

@@ -13,6 +13,8 @@
 @property (readonly) struct OpaqueFigRouteDiscoverer { }*routeDiscoverer;
 @property (nonatomic, retain) AVAudioSession *targetAudioSession;
 
+// Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
+
 + (void)initialize;
 + (id)outputDeviceDiscoverySessionFactory;
 
@@ -31,5 +33,9 @@
 - (void)setDiscoveryMode:(long long)arg1;
 - (void)setTargetAudioSession:(id)arg1;
 - (id)targetAudioSession;
+
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
+- (unsigned long long)_pu_routeAvailability;
 
 @end

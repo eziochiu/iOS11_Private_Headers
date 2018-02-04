@@ -214,6 +214,8 @@
 @property (nonatomic, readonly) double timestampOfLastTouchesEnded;
 @property (nonatomic, retain) TIKeyboardTouchEvent *touchEventWaitingForKeyInputEvent;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (void)_clearHardwareKeyboardMinimizationPreference;
 + (id)activeInstance;
 + (double)additionalInstanceHeight;
@@ -226,8 +228,6 @@
 + (void)applicationWillResignActive:(id)arg1;
 + (void)applicationWillSuspend:(id)arg1;
 + (struct CGSize { double x1; double x2; })defaultSizeForInterfaceOrientation:(long long)arg1;
-+ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })deviceSpecificPaddingForInterfaceOrientation:(long long)arg1 inputMode:(id)arg2;
-+ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })deviceSpecificStaticHitBufferForInterfaceOrientation:(long long)arg1 inputMode:(id)arg2;
 + (void)hardwareKeyboardAvailabilityChanged;
 + (bool)isActivatingForeground;
 + (bool)isSplit;
@@ -918,5 +918,10 @@
 - (bool)willDoubleSpacePeriodForInputString:(id)arg1 afterSpace:(bool)arg2 elapsedTime:(double)arg3;
 - (void)willMoveToWindow:(id)arg1;
 - (void)willReplaceTextInRangedSelectionWithKeyboardInput;
+
+// Image: /bootstrap/Library/SBInject/LittleX.dylib
+
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })deviceSpecificPaddingForInterfaceOrientation:(long long)arg1 inputMode:(id)arg2;
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })deviceSpecificStaticHitBufferForInterfaceOrientation:(long long)arg1 inputMode:(id)arg2;
 
 @end

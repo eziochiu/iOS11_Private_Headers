@@ -29,6 +29,8 @@
 @property (readonly) unsigned int rawPhotoPixelFormatType;
 @property (readonly) long long uniqueID;
 
+// Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
+
 + (id)burstQualityPhotoSettings;
 + (id)photoSettings;
 + (id)photoSettingsFromPhotoSettings:(id)arg1;
@@ -112,5 +114,9 @@
 - (unsigned int)shutterSound;
 - (long long)uniqueID;
 - (unsigned long long)userInitiatedPhotoRequestTime;
+
+// Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
+
+- (id)initWithRequest:(id)arg1;
 
 @end

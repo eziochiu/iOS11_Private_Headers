@@ -7,6 +7,8 @@
 @property (readonly) Protocol *protocol;
 @property (readonly, retain) NSObject *target;
 
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
+
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)protocolCheckerWithTarget:(id)arg1 protocol:(id)arg2;
 
@@ -21,5 +23,10 @@
 - (id)protocol;
 - (bool)respondsToSelector:(SEL)arg1;
 - (id)target;
+
+// Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
+
+- (id)_imMethodSignatureForSelector:(SEL)arg1;
+- (id)initWithProtocol:(id)arg1;
 
 @end

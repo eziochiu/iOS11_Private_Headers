@@ -21,6 +21,8 @@
 @property (copy) NSString *name;
 @property (readonly) NSArray *persistentStores;
 
+// Image: /System/Library/Frameworks/CoreData.framework/CoreData
+
 + (void)__Multithreading_Violation_AllThatIsLeftToUsIsHonor__;
 + (id)_beginPowerAssertionWithAssert:(unsigned long long*)arg1;
 + (Class)_classForPersistentStoreAtURL:(id)arg1;
@@ -145,5 +147,9 @@
 - (bool)tryLock;
 - (void)unlock;
 - (bool)validateManagedObjectModel:(id)arg1 forHistoryTrackingWithOptions:(id)arg2 error:(id*)arg3;
+
+// Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
+
+- (id)ic_managedObjectIDForURIString:(id)arg1;
 
 @end

@@ -55,6 +55,8 @@
 @property (nonatomic) bool viewportFitEnabled;
 @property (nonatomic) bool visualViewportEnabled;
 
+// Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
+
 + (id)_IBCreatorID;
 + (void)_checkLastReferenceForIdentifier:(id)arg1;
 + (void)_clearNetworkLoaderSession;
@@ -474,5 +476,9 @@
 - (void)willAddToWebView;
 - (bool)writableStreamAPIEnabled;
 - (bool)zoomsTextOnly;
+
+// Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
+
++ (id)standardMailWebPreferencesForDisplayStyle:(int)arg1 regenerate:(bool)arg2;
 
 @end

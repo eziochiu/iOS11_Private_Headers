@@ -56,6 +56,8 @@
 @property (nonatomic, readonly) NSUndoManager *undoManager;
 @property (nonatomic, readonly) WebScriptObject *windowScriptObject;
 
+// Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
+
 + (id)MIMETypesShownAsHTML;
 + (bool)_HTTPPipeliningEnabled;
 + (id)_MIMETypeForFile:(id)arg1;
@@ -682,5 +684,11 @@
 - (void)yankAndSelect:(id)arg1;
 - (void)zoomPageIn:(id)arg1;
 - (void)zoomPageOut:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/WebBookmarks.framework/WebBookmarks
+
+- (bool)_createSymlinkInDirectory:(id)arg1 pointingToPath:(id)arg2;
+- (id)_quickLookContentFilePath;
+- (bool)_writeDataAtPath:(id)arg1 asArchive:(bool)arg2;
 
 @end

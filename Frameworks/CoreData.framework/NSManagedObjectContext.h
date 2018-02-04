@@ -67,6 +67,7 @@
 
 @property (nonatomic) bool automaticallyMergesChangesFromParent;
 @property (readonly) unsigned long long concurrencyType;
+@property (nonatomic, retain) NSString *debugName;
 @property (nonatomic, readonly) NSSet *deletedObjects;
 @property (nonatomic, readonly) bool hasChanges;
 @property (nonatomic, readonly) NSSet *insertedObjects;
@@ -86,6 +87,8 @@
 @property (nonatomic, retain) NSUndoManager *undoManager;
 @property (nonatomic, readonly) NSSet *updatedObjects;
 @property (nonatomic, readonly) NSMutableDictionary *userInfo;
+
+// Image: /System/Library/Frameworks/CoreData.framework/CoreData
 
 + (void)__Multithreading_Violation_AllThatIsLeftToUsIsHonor__;
 + (bool)_handleError:(id)arg1 withError:(id*)arg2;
@@ -348,5 +351,27 @@
 - (void)unlockObjectStore;
 - (id)updatedObjects;
 - (id)userInfo;
+
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+
+- (id)debugName;
+- (bool)ic_save;
+- (bool)ic_saveWithLogDescription:(id)arg1;
+- (void)setDebugName:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
+
+- (id)deleteObjectsWithIncrementalSave:(id)arg1;
+- (id)enumerateObjectsFromFetchRequest:(id)arg1 count:(unsigned long long*)arg2 batchSize:(unsigned long long)arg3 usingBlock:(id /* block */)arg4;
+- (id)enumerateObjectsFromFetchRequest:(id)arg1 count:(unsigned long long*)arg2 usingDefaultBatchSizeWithBlock:(id /* block */)arg3;
+- (id)enumerateWithIncrementalSaveUsingObjects:(id)arg1 shouldRefreshAfterSave:(bool)arg2 withBlock:(id /* block */)arg3;
+- (id)enumerateWithIncrementalSaveUsingObjects:(id)arg1 withBlock:(id /* block */)arg2;
+- (bool)isUserInterfaceContext;
+- (id)photoLibrary;
+- (void)pl_refresh;
+
+// Image: /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusFoundation.framework/OpusFoundation
+
+- (id)objectWithURI:(id)arg1;
 
 @end

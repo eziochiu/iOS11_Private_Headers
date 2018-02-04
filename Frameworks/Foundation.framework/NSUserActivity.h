@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSUserActivity : NSObject <NSItemProviderReading, NSItemProviderWriting, UIItemProviderReading, UIItemProviderWriting> {
+@interface NSUserActivity : NSObject <INCacheableObject, NSItemProviderReading, NSItemProviderWriting, UIItemProviderReading, UIItemProviderWriting> {
     id  _delegate;
     id  _frameworkDelegate;
     id  _internal;
@@ -24,11 +24,14 @@
 @property (readonly, copy) NSDate *_lastActivityDate;
 @property (setter=_setMinimalRequiredUserInfoKeys:, copy) NSSet *_minimalRequiredUserInfoKeys;
 @property (setter=_setOptions:, copy) NSDictionary *_options;
+@property (readonly, copy) NSUUID *_originalUniqueIdentifier;
 @property (setter=_setSubtitle:, copy) NSString *_subtitle;
 @property (readonly) long long _suggestedActionType;
 @property (readonly, copy) NSString *_teamIdentifier;
 @property (readonly, retain) NSUUID *_uniqueIdentifier;
 @property (readonly, copy) NSString *activityType;
+@property (nonatomic, readonly, copy) NSString *cacheIdentifier;
+@property (copy) CSSearchableItemAttributeSet *contentAttributeSet;
 @property (readonly, copy) NSString *debugDescription;
 @property <NSUserActivityDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -36,8 +39,11 @@
 @property (getter=isEligibleForPublicIndexing) bool eligibleForPublicIndexing;
 @property (getter=isEligibleForSearch) bool eligibleForSearch;
 @property (copy) NSDate *expirationDate;
+@property (nonatomic, copy) NSString *externalMediaContentIdentifier;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) INInteraction *interaction;
 @property (copy) NSSet *keywords;
+@property (nonatomic, retain) MKMapItem *mapItem;
 @property bool needsSave;
 @property (copy) NSURL *referrerURL;
 @property (copy) NSSet *requiredUserInfoKeys;
@@ -167,6 +173,36 @@
 - (id)webpageURL;
 - (void)willSynchronizeActivity;
 
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
++ (void)buildFromCachePayload:(id)arg1 identifier:(id)arg2 completion:(id /* block */)arg3;
++ (void)deleteAllInteractions;
++ (void)deleteInteractionsWithGroupIdentifier:(id)arg1;
++ (void)deleteInteractionsWithIdentifiers:(id)arg1;
+
+- (id)_intentsIdentifier;
+- (void)_setInteraction:(id)arg1 donate:(bool)arg2;
+- (id)cacheIdentifier;
+- (void)generateCachePayloadWithCompletion:(id /* block */)arg1;
+- (id)inInteraction;
+- (id)interaction;
+- (void)setInInteraction:(id)arg1;
+- (void)setInteraction:(id)arg1;
+
+// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+
+- (void)_mapkit_clearMapItemDonationFields;
+- (void)_mapkit_populateFieldsForDonationOfMapItem:(id)arg1;
+- (id)mapItem;
+- (void)setMapItem:(id)arg1;
+
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+
+- (id)_externalMediaContentBundleIdentifier;
+- (void)_setExternalMediaContentBundleIdentifier:(id)arg1;
+- (id)externalMediaContentIdentifier;
+- (void)setExternalMediaContentIdentifier:(id)arg1;
+
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)newObjectWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 options:(id)arg3 error:(id*)arg4;
@@ -176,5 +212,29 @@
 
 - (id)initWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 error:(id*)arg3;
 - (id)loadDataWithTypeIdentifier:(id)arg1 forItemProviderCompletionHandler:(id /* block */)arg2;
+
+// Image: /System/Library/PrivateFrameworks/ContactsUICore.framework/ContactsUICore
+
++ (id)_cnui_searchMailUserActivityForContact:(id)arg1;
++ (id)_cnui_sendMessageIntentWithHandle:(id)arg1 contact:(id)arg2;
++ (id)_cnui_startAudioCallIntentWithHandle:(id)arg1 contact:(id)arg2;
++ (id)_cnui_startVideoCallIntentWithHandle:(id)arg1 contact:(id)arg2;
++ (id)_cnui_userActivityWithActivityType:(id)arg1 handle:(id)arg2 contact:(id)arg3 intentWithPerson:(id /* block */)arg4;
+
+// Image: /System/Library/PrivateFrameworks/UserActivity.framework/UserActivity
+
+- (id)_copyWithNewUUID;
+- (id)_objectForIdentifier:(id)arg1;
+- (id)_originalUniqueIdentifier;
+- (id)_payloadForIdentifier:(id)arg1;
+- (id /* block */)_payloadUpdateBlockForIdentifier:(id)arg1;
+- (void)_sendToCoreSpotlightIndexer;
+- (void)_setDirty:(bool)arg1 identifier:(id)arg2;
+- (void)_setPayload:(id)arg1 object:(id)arg2 identifier:(id)arg3;
+- (void)_setPayload:(id)arg1 object:(id)arg2 identifier:(id)arg3 dirty:(bool)arg4;
+- (void)_setPayloadIdentifier:(id)arg1 object:(id)arg2 withBlock:(id /* block */)arg3;
+- (void)_updateForwardToCoreSpotlightIndexer:(BOOL)arg1;
+- (id)contentAttributeSet;
+- (void)setContentAttributeSet:(id)arg1;
 
 @end

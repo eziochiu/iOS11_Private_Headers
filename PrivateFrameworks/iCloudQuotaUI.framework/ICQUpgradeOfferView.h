@@ -1,0 +1,111 @@
+/* made by EzioChiu
+   Image: /System/Library/PrivateFrameworks/iCloudQuotaUI.framework/iCloudQuotaUI
+ */
+
+@interface ICQUpgradeOfferView : ICQPageView <UITextViewDelegate> {
+    UILayoutGuide * _aboveSpinnerLayoutGuide;
+    NSArray * _activeConstraints;
+    UILayoutGuide * _belowSpinnerLayoutGuide;
+    UIButton * _bottomButton;
+    ICQLink * _bottomLink;
+    <ICQPageDelegate> * _delegate;
+    _ICQTextView * _finePrintView;
+    double  _iconTitleSpacing;
+    NSLayoutConstraint * _iconTopMarginConstraint;
+    UIImageView * _iconView;
+    bool  _isResizingFonts;
+    bool  _layoutGuideProblem;
+    UILabel * _messageLabel;
+    UILayoutGuide * _navigationBarLayoutGuide;
+    UIButton * _purchaseButton;
+    ICQLink * _purchaseLink;
+    NSArray * _serviceViews;
+    UIActivityIndicatorView * _spinner;
+    bool  _suppressResizingFonts;
+    double  _tippyTopMargin;
+    UILabel * _titleLabel;
+    NSLayoutConstraint * _titleTopMarginConstraint;
+    long long  _upgradeMode;
+    _ICQUpgradeOfferPageSpecification * _upgradeOfferPageSpecification;
+}
+
+@property (nonatomic, readonly) UILayoutGuide *aboveSpinnerLayoutGuide;
+@property (nonatomic, retain) NSArray *activeConstraints;
+@property (nonatomic, readonly) UILayoutGuide *belowSpinnerLayoutGuide;
+@property (nonatomic, retain) UIButton *bottomButton;
+@property (nonatomic, readonly) ICQLink *bottomLink;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <ICQPageDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) _ICQTextView *finePrintView;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) double iconTitleSpacing;
+@property (nonatomic, readonly) NSLayoutConstraint *iconTopMarginConstraint;
+@property (nonatomic, retain) UIImageView *iconView;
+@property (nonatomic, retain) UILabel *messageLabel;
+@property (nonatomic, readonly) UILayoutGuide *navigationBarLayoutGuide;
+@property (nonatomic, retain) UIButton *purchaseButton;
+@property (nonatomic, readonly) ICQLink *purchaseLink;
+@property (nonatomic, retain) NSArray *serviceViews;
+@property (nonatomic, retain) UIActivityIndicatorView *spinner;
+@property (readonly) Class superclass;
+@property (nonatomic) double tippyTopMargin;
+@property (nonatomic, retain) UILabel *titleLabel;
+@property (nonatomic, readonly) NSLayoutConstraint *titleTopMarginConstraint;
+@property (nonatomic) long long upgradeMode;
+@property (nonatomic, retain) _ICQUpgradeOfferPageSpecification *upgradeOfferPageSpecification;
+
+- (void).cxx_destruct;
+- (id)_imageForBundleIdentifier:(id)arg1;
+- (id)_imageForGenericCloud;
+- (void)_resetAdjustableItems;
+- (bool)_shrinkFontOfLabel:(id)arg1;
+- (void)_shrinkTopMargin;
+- (double)_superGetTopMargin;
+- (id)aboveSpinnerLayoutGuide;
+- (id)activeConstraints;
+- (id)belowSpinnerLayoutGuide;
+- (id)bottomButton;
+- (void)bottomButtonTapped:(id)arg1;
+- (id)bottomLink;
+- (id)delegate;
+- (id)finePrintAttributes;
+- (id)finePrintParagraphStyle;
+- (id)finePrintParagraphStyleAttributes;
+- (id)finePrintView;
+- (id)finePrintViewAttributedText;
+- (double)iconTitleSpacing;
+- (id)iconTopMarginConstraint;
+- (id)iconView;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)layoutSubviews;
+- (id)messageLabel;
+- (id)navigationBarLayoutGuide;
+- (id)purchaseButton;
+- (void)purchaseButtonTapped:(id)arg1;
+- (id)purchaseLink;
+- (id)serviceViews;
+- (void)setActiveConstraints:(id)arg1;
+- (void)setBottomButton:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setFinePrintView:(id)arg1;
+- (void)setIconTitleSpacing:(double)arg1;
+- (void)setIconView:(id)arg1;
+- (void)setMessageLabel:(id)arg1;
+- (void)setPurchaseButton:(id)arg1;
+- (void)setServiceViews:(id)arg1;
+- (void)setSpinner:(id)arg1;
+- (void)setTippyTopMargin:(double)arg1;
+- (void)setTitleLabel:(id)arg1;
+- (void)setUpgradeMode:(long long)arg1;
+- (void)setUpgradeOfferPageSpecification:(id)arg1;
+- (id)spinner;
+- (bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
+- (double)tippyTopMargin;
+- (id)titleLabel;
+- (id)titleTopMarginConstraint;
+- (void)updateConstraints;
+- (long long)upgradeMode;
+- (id)upgradeOfferPageSpecification;
+
+@end

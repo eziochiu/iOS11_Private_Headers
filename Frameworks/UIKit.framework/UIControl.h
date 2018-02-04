@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIControl : UIView {
+@interface UIControl : UIView <SKUIAdvertisingPrivacyControlProtocol> {
     struct { 
         unsigned int disabled : 1; 
         unsigned int tracking : 1; 
@@ -28,17 +28,24 @@
     NSMutableArray * _targetActions;
 }
 
+@property (nonatomic, retain) NSString *adPrivacyData;
 @property (nonatomic, readonly) unsigned long long allControlEvents;
 @property (nonatomic, readonly) NSSet *allTargets;
 @property (nonatomic) long long contentHorizontalAlignment;
 @property (nonatomic) long long contentVerticalAlignment;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) long long effectiveContentHorizontalAlignment;
 @property (getter=isEnabled, nonatomic) bool enabled;
+@property (readonly) unsigned long long hash;
 @property (getter=isHighlighted, nonatomic) bool highlighted;
 @property (getter=isSelected, nonatomic) bool selected;
 @property (nonatomic, readonly) unsigned long long state;
+@property (readonly) Class superclass;
 @property (getter=isTouchInside, nonatomic, readonly) bool touchInside;
 @property (getter=isTracking, nonatomic, readonly) bool tracking;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (bool)_allowActionsToQueue;
 + (unsigned long long)_primaryStateForState:(unsigned long long)arg1;
@@ -123,5 +130,26 @@
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEstimatedPropertiesUpdated:(id)arg1;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+
+// Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
+
+- (void)_cnui_super_touchesCancelled:(id)arg1 withEvent:(id)arg2;
+
+// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+
+- (void)_mapkit_setTarget:(id)arg1 action:(SEL)arg2;
+
+// Image: /System/Library/PrivateFrameworks/AppSupportUI.framework/AppSupportUI
+
+- (bool)supportsAsynchronousMeasurement;
+
+// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
+
+- (void)music_configureControlWithTextDescriptor:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
+
+- (id)adPrivacyData;
+- (void)setAdPrivacyData:(id)arg1;
 
 @end

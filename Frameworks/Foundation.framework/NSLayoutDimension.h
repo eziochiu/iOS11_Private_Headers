@@ -4,6 +4,8 @@
 
 @interface NSLayoutDimension : NSLayoutAnchor
 
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
+
 - (id)anchorByAddingConstant:(double)arg1;
 - (id)anchorByAddingDimension:(id)arg1;
 - (id)anchorByMultiplyingByConstant:(double)arg1;
@@ -29,5 +31,11 @@
 - (id)ruleLessThanOrEqualToConstant:(double)arg1 priority:(float)arg2 identifier:(id)arg3;
 - (id)times:(double)arg1;
 - (bool)validateOtherAttribute:(long long)arg1;
+
+// Image: /System/Library/Frameworks/AVKit.framework/AVKit
+
+- (id)avkit_constraintEqualToConstant:(double)arg1 priority:(float)arg2;
+- (id)avkit_constraintGreaterThanOrEqualToConstant:(double)arg1 priority:(float)arg2;
+- (id)avkit_constraintLessThanOrEqualToConstant:(double)arg1 priority:(float)arg2;
 
 @end

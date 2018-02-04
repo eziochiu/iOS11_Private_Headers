@@ -71,6 +71,7 @@
 @property (nonatomic, readonly) long long _transitionStyle;
 @property (setter=_setViewControllers:, nonatomic, retain) NSArray *_viewControllers;
 @property (setter=_setViewControllersStashedForRotation:, nonatomic, retain) NSArray *_viewControllersStashedForRotation;
+@property (nonatomic) bool accessibilityScreenChangeOnScroll;
 @property (nonatomic) <UIPageViewControllerDataSource> *dataSource;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <UIPageViewControllerDelegate> *delegate;
@@ -83,6 +84,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) long long transitionStyle;
 @property (nonatomic, readonly) NSArray *viewControllers;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)_incomingViewControllerKeys;
 + (bool)_isNavigationOrientation:(long long)arg1 supportedForTransitionStyle:(long long)arg2;
@@ -213,5 +216,10 @@
 - (void)viewWillUnload;
 - (void)willAnimateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (void)willRotateToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
+
+// Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
+
+- (bool)accessibilityScreenChangeOnScroll;
+- (void)setAccessibilityScreenChangeOnScroll:(bool)arg1;
 
 @end

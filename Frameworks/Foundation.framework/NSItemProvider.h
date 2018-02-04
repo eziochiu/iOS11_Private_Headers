@@ -98,6 +98,17 @@
 - (id)suggestedName;
 - (id)userInfo;
 
+// Image: /System/Library/Frameworks/Photos.framework/Photos
+
+- (id)initWithLivePhoto:(id)arg1;
+
+// Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
+
++ (void)_sf_loadObjectsFromItemProviders:(id)arg1 usingLoader:(int (*)arg2 completionHandler:(id /* block */)arg3;
+
+- (void)_sf_loadObjectOfClasses:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_sf_registerFileRepresentationForQuickLookDocument:(id)arg1;
+
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)itemProviderWithURL:(id)arg1 title:(id)arg2;
@@ -110,5 +121,24 @@
 - (void)setPreferredPresentationStyle:(long long)arg1;
 - (void)setTeamData:(id)arg1;
 - (id)teamData;
+
+// Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
+
++ (id)_fileProviderItemProviderForAsset:(id)arg1;
++ (id)_itemProviderForAsset:(id)arg1;
++ (void)_px_recursivelyCollectCollectionsIn:(id)arg1 fetchResult:(id)arg2;
++ (id)_px_temporaryURLFromURL:(id)arg1;
++ (id)px_itemProviderForAsset:(id)arg1;
++ (id)px_itemProvidersForCollection:(id)arg1;
++ (id)px_itemProvidersForFetchResult:(id)arg1;
+
+- (id)_px_assetResourceBagsFromUniformTypeIdentifier:(id)arg1 atURL:(id)arg2;
+- (long long)_px_assetResourceTypeFromUniformTypeIdentifier:(id)arg1;
+- (id)_px_bestTypeIdentifierForItemProvider:(id)arg1;
+- (bool)_px_isSupportedUniformTypeIdentifier:(id)arg1;
+- (long long)_px_shareMediaTypeFromUniformTypeIdentifier:(id)arg1;
+- (id)_px_sharedMediaVideoComplementFromURL:(id)arg1;
+- (void)px_createAssetWithCompletionBlock:(id /* block */)arg1;
+- (void)px_createStreamShareSourceWithCompletionBlock:(id /* block */)arg1;
 
 @end
